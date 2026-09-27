@@ -21,6 +21,8 @@
 | `/services/` | 03 我的服務 —— Co Me Time、人生覺察、品牌規劃、AI 品牌系統 |
 | `/works/` | 04 我的作品 —— 案例、Podcast、短影音、文章 |
 | `/news/` | 05 最新公告 |
+| `/shao/` | 媽媽燒（宇宙媽媽賞的產品線，`2026-09-27` 新增；選單在「服務」之後） |
+| `/shao/candles/` | 希望之光 21 顆頻率蠟燭限定組。**建置產物，不要在這裡改**，見下方〈媽媽燒蠟燭頁〉 |
 
 **06 後台不在這個站，也不在任何 repo。** 那一區是第三方個資加上對真人的主觀評分，
 靜態站沒有登入、Git 歷史不可刪除。後台走 Notion 或同類工具，由她自己保管。
@@ -42,6 +44,21 @@
 4. Pages 設定頁勾 Enforce HTTPS（憑證簽發需要幾分鐘）。
 
 `.nojekyll` 已加，避免 Jekyll 處理底線開頭的路徑。
+
+## 媽媽燒蠟燭頁（`/shao/candles/`）
+
+這一頁與希望之光官網的 `https://hopebox.com.tw/candles` 是**同一份正本**的兩個出口。正本在
+`mamasan-lab/6-collaborations/teachers/tiffany-hope-light/website-admin/landing-pages/hopelight-candle21-lp.html`，
+在 `website-admin/` 跑 `npm run candles-lp:shao` 會重新產生 `shao/candles/index.html` 與 `assets/`。
+
+建置時只換「屬於哪個通路」的部分：詢問按鈕改成 mamasan 的官方 LINE（`@941hfdmj`）、品牌標示
+「媽媽燒 × 希望之光」、聯絡方式、頁尾、配色（本站的米色與乾燥玫瑰）。價格、款名與文案一律跟著正本走。
+
+**詢問按鈕一定要是 mamasan 的 LINE**：媽媽燒每賣一顆 mamasan 分潤，客人被導到希望之光的 LINE 就對不了帳。
+建置腳本會在頁面上還留有希望之光的 LINE、IG 或網址時直接停下。
+
+這頁是獨立的銷售頁，沒有本站的頂端選單，頁尾有「回到宇宙媽媽賞」。它**不是** `/works/` 的案例；
+那一區不具名的規則（需 Tiffany 書面同意）不因這頁而改變。
 
 ## 上線前要處理的事
 
