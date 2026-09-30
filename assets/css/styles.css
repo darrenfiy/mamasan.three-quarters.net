@@ -147,6 +147,43 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
 .button.primary:hover { background: var(--rose-deep); }
 .button.warm { background: rgba(230, 210, 204, 0.6); border-color: rgba(157, 95, 107, 0.28); }
 
+/* ---------- portraits ---------- */
+
+/* 人像照是深藍灰棚拍背景；框底色取自照片背景，載入前不會閃白 */
+.hero-grid.with-portrait { align-items: center; }
+.hero-grid.portrait-first { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); }
+
+.portrait {
+  position: relative;
+  margin: 0;
+  isolation: isolate;
+}
+.portrait img {
+  width: 100%;
+  object-fit: cover;
+  background: #222a35;
+  box-shadow: 0 26px 60px rgba(34, 42, 53, 0.22);
+}
+.portrait::before {
+  content: "";
+  position: absolute;
+  inset: -14px 14px 14px -14px;
+  border: 1px solid rgba(180, 138, 74, 0.6);
+  z-index: -1;
+}
+
+/* 拱形：上緣是半圓，比例 4:5（垂直半徑 = 寬的一半 = 高的 40%） */
+.portrait-arch img,
+.portrait-arch::before {
+  border-radius: 50% 50% var(--radius-lg) var(--radius-lg) / 40% 40% var(--radius-lg) var(--radius-lg);
+}
+.portrait-arch img { aspect-ratio: 4 / 5; object-position: 50% 18%; }
+
+/* 全身照：保留原本 2:3，不裁到腳 */
+.portrait-full img,
+.portrait-full::before { border-radius: var(--radius-xl); }
+.portrait-full img { aspect-ratio: 2 / 3; }
+
 /* ---------- quote ---------- */
 
 .quote {
@@ -316,7 +353,11 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
 .footer-note { font-size: 0.84rem; color: var(--faint); }
 
 @media (max-width: 860px) {
-  .hero-grid { grid-template-columns: 1fr; }
+  .hero-grid, .hero-grid.portrait-first { grid-template-columns: 1fr; }
+  .hero-grid .portrait { order: -1; width: min(320px, calc(100% - 28px)); margin: 14px auto 10px; }
+  /* 全身照比較長，手機上縮窄，讓標題留在第一屏附近 */
+  .hero-grid .portrait-full { width: min(250px, calc(100% - 28px)); }
+  .br-wide { display: none; }
   .panel { padding: 30px 24px; }
   .hero { padding: 44px 0 26px; }
   .deflist > div { grid-template-columns: 1fr; gap: 4px; }
