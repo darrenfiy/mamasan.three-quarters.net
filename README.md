@@ -21,6 +21,7 @@
 | `/services/` | 03 我的服務 —— Co Me Time、人生覺察、品牌規劃、AI 品牌系統 |
 | `/works/` | 04 我的作品 —— 案例、Podcast、短影音、文章 |
 | `/news/` | 05 最新公告 |
+| `/cometime/` | Co Me Time 預約頁（`2026-09-30` 新增）。單頁、沒有選單，預約走她自己帳號的 Tally 與 Google 日曆。設定與實驗紀錄見 `mamasan-lab/3-cometime/landing/README.md` |
 | `/shao/` | 媽媽燒（宇宙媽媽賞的產品線，`2026-09-27` 新增；選單在「服務」之後） |
 | `/shao/candles/` | 希望之光 21 顆頻率蠟燭限定組。**建置產物，不要在這裡改**，見下方〈媽媽燒蠟燭頁〉 |
 
