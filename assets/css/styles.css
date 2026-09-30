@@ -13,6 +13,9 @@
   --gold: #b48a4a;
   --forest: #31483f;
   --cocoa: #4a3a32;
+  --ember-bg: #2a0911;
+  --ember-gold: #d9a44b;
+  --ember-cream: #f7ecdc;
   --shadow: 0 22px 64px rgba(42, 35, 32, 0.08);
   --shadow-sm: 0 10px 30px rgba(42, 35, 32, 0.06);
   --radius-xl: 32px;
@@ -183,6 +186,99 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
 .portrait-full img,
 .portrait-full::before { border-radius: var(--radius-xl); }
 .portrait-full img { aspect-ratio: 2 / 3; }
+
+/* ---------- 媽媽燒 ---------- */
+
+/* 顏色取自她的粉專 logo：深酒紅底、金色火焰、紅唇。只用在 /shao/，其他頁維持米色 */
+.shao-hero {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding: 48px 46px;
+  border-radius: var(--radius-xl);
+  color: var(--ember-cream);
+  background:
+    radial-gradient(circle at 18% 50%, rgba(217, 164, 75, 0.26), transparent 30%),
+    radial-gradient(1.5px 1.5px at 62% 18%, rgba(247, 236, 220, 0.8), transparent 60%),
+    radial-gradient(1px 1px at 78% 72%, rgba(247, 236, 220, 0.7), transparent 60%),
+    radial-gradient(1.5px 1.5px at 90% 30%, rgba(217, 164, 75, 0.9), transparent 60%),
+    radial-gradient(1px 1px at 48% 82%, rgba(217, 164, 75, 0.8), transparent 60%),
+    linear-gradient(160deg, #3d0e19 0%, var(--ember-bg) 55%, #1c060c 100%);
+  box-shadow: 0 26px 60px rgba(42, 9, 17, 0.28);
+}
+.shao-hero .shao-logo { width: 100%; filter: drop-shadow(0 0 36px rgba(217, 164, 75, 0.35)); }
+.shao-hero .eyebrow { color: var(--ember-gold); }
+.shao-hero h1 { color: var(--ember-cream); }
+.shao-hero .lead { color: rgba(247, 236, 220, 0.82); }
+.button.ember { background: var(--ember-gold); border-color: var(--ember-gold); color: #2a0911; }
+.button.ember:hover { background: #e6b562; }
+.button.on-dark { background: transparent; border-color: rgba(247, 236, 220, 0.45); color: var(--ember-cream); }
+
+.swatches { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.swatch {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 18px 12px 16px;
+  border-radius: var(--radius-md);
+  background: var(--paper-strong);
+  border: 1px solid var(--line);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.swatch img { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 10px; }
+.swatch strong { display: block; font-weight: normal; color: var(--ink); letter-spacing: 0.04em; }
+.swatch span { display: block; margin-top: 4px; font-size: 0.82rem; line-height: 1.6; color: var(--faint); }
+
+.shao-quote {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: #1c060c;
+  color: #f7ecdc;
+  box-shadow: var(--shadow);
+}
+.shao-quote img { width: 100%; height: 100%; object-fit: cover; }
+.shao-quote blockquote { margin: 0; padding: 44px 42px; align-self: center; font-size: 1.28rem; line-height: 1.9; }
+.shao-quote cite { display: block; margin-top: 18px; font-size: 0.88rem; font-style: normal; color: #d9a44b; }
+.shao-quote cite a { color: inherit; }
+
+.reels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.reel { text-decoration: none; display: block; }
+.reel figure { position: relative; margin: 0; border-radius: var(--radius-lg); overflow: hidden; background: #1c060c; }
+.reel img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; transition: transform 0.3s; }
+.reel:hover img { transform: scale(1.03); }
+.reel figure::after {
+  content: "▶";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  color: #fff;
+  background: rgba(28, 6, 12, 0.6);
+}
+.reel strong { display: block; margin-top: 10px; font-weight: normal; color: var(--ink); }
+.reel span { display: block; font-size: 0.86rem; color: var(--faint); }
+
+@media (max-width: 860px) {
+  .shao-hero { grid-template-columns: 1fr; text-align: center; padding: 36px 24px; gap: 18px; }
+  .shao-hero .shao-logo { width: 150px; margin: 0 auto; }
+  /* 「燒掉你不需要的舊能量。」十一個字要排在同一行 */
+  .shao-hero h1 { font-size: clamp(1.45rem, 6.3vw, 2.2rem); }
+  .shao-hero .actions { justify-content: center; }
+  .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .shao-quote { grid-template-columns: 1fr; }
+  .shao-quote img { max-height: 320px; }
+  .shao-quote blockquote { padding: 30px 26px; font-size: 1.12rem; }
+  .reels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 
 /* ---------- quote ---------- */
 
