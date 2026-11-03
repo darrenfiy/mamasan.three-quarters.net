@@ -22,6 +22,7 @@
 | `/works/` | 04 我的作品 —— 案例、Podcast、短影音、文章 |
 | `/news/` | 05 最新公告 |
 | `/cometime/` | Co Me Time 一頁式網站（`2026-09-30` 新增預約頁；`2026-11-03` 依她的規劃改版為「內在探索 × 外在呈現」，奶油白＋橄欖綠配色只用在這頁）。頂端只有本頁段落錨點，預約走她自己帳號的 Tally 與 Google 日曆。改版對照、補寫句子與設定紀錄見 `mamasan-lab/3-cometime/landing/README.md` |
+| `/cometime/onepage/` | Co Me Time × 四分之三 聯名款（`2026-11-03` 新增）：品牌定位諮詢＋一頁式網站，含「一般行情／分開買／聯名款」三欄比較。同樣用 `body.cm` 配色，樣式在 `styles.css` 的〈聯名款〉段。價格同時寫在 `/cometime/` 橫幅與四分之三服務頁，改價清單見 `darrenfiy-studio/OFFERINGS/mamasan-partner-menu/cometime-joint-packages.md` |
 | `/shao/` | 宇宙媽媽燒的門面（`2026-09-27` 新增，`2026-09-30` 改版；選單在「服務」之後）。見下方〈媽媽燒門面〉 |
 | `/shao/candles/` | 希望之光 21 顆頻率蠟燭限定組。**建置產物，不要在這裡改**，見下方〈媽媽燒蠟燭頁〉 |
 
@@ -48,6 +49,7 @@
 | `portrait-navy-seated.jpg` | 服務頁〈合作方式〉 | 坐著、朝向鏡頭，放在「從一次對話開始」旁邊 |
 | `og-mamasan.jpg` | 各頁分享預覽（LINE／FB） | 1200×630，由首頁標題與第一張人像合成 |
 | `og-cometime.jpg` | `/cometime/` 分享預覽 | 1200×630，`2026-11-03` 改版重做；原始檔 `mamasan-lab/3-cometime/landing/og-cometime.html` |
+| `og-onepage.jpg` | `/cometime/onepage/` 分享預覽 | 1200×630，標題與價格 NT$8,888；改價要重做，原始檔 `mamasan-lab/3-cometime/landing/og-onepage.html` |
 
 三張人像是收到的原檔，沒有重新壓縮（853×1280，每張 30–40 KB，看起來是傳訊軟體壓過的版本）。
 若拿得到攝影師給的高解析原檔，用同檔名覆蓋即可，版面不用改。
