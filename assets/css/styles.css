@@ -467,3 +467,283 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
   .nav-links a { padding: 5px 10px; font-size: 0.86rem; }
   .section { padding: 30px 0; }
 }
+
+/* ---------- Co Me Time ---------- */
+
+/* 2026-11-03 改版：她指定奶油白、橄欖綠、咖啡色與復古綠電話。只用在 /cometime/（body.cm），
+   靠覆寫變數換色，版型元件沿用全站 */
+body.cm {
+  --bg: #f5f1e3;
+  --bg-deep: #ece5cd;
+  --paper: rgba(255, 253, 245, 0.9);
+  --paper-strong: rgba(255, 253, 246, 0.97);
+  --ink: #26271c;
+  --muted: #5b5c48;
+  --faint: #84826b;
+  --line: rgba(38, 39, 28, 0.12);
+  --rose: #5f6b38;
+  --rose-deep: #434c25;
+  --blush: #e0e3c9;
+  --gold: #9c7246;
+  --forest: #33402b;
+  --cocoa: #4d3b2b;
+  --phone: #7f9b74;
+  --phone-deep: #5c7651;
+  --coffee: #7e5236;
+  --cream: #f7f2e2;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(95, 107, 56, 0.13), transparent 34%),
+    radial-gradient(circle at 100% 12%, rgba(156, 114, 70, 0.12), transparent 30%),
+    linear-gradient(180deg, #fbf8ee 0%, var(--bg) 50%, var(--bg-deep) 100%);
+}
+body.cm .site-header { background: rgba(245, 241, 227, 0.86); }
+body.cm .steps li::before { background: var(--blush); }
+body.cm .flow li.mark { background: rgba(95, 107, 56, 0.12); border-color: rgba(95, 107, 56, 0.32); }
+body.cm .prose strong { border-bottom-color: rgba(95, 107, 56, 0.4); }
+body.cm .portrait::before { border-color: rgba(156, 114, 70, 0.55); }
+body.cm .status-soon { background: rgba(156, 114, 70, 0.17); color: #6b4c2a; }
+body.cm h1, body.cm h2, body.cm h3 { text-wrap: balance; }
+body.cm .section[id] { scroll-margin-top: 88px; }
+
+.cm-nav { align-items: center; }
+.cm-nav .cm-nav-cta { padding: 7px 16px; font-size: 0.9rem; margin-left: 4px; }
+.cm-nav .cm-nav-cta:hover { color: #fffaf7; background: var(--rose-deep); }
+
+/* 首屏：左文案，右插畫（復古電話＋咖啡） */
+.cm-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+}
+.cm-hero h1 { font-size: clamp(1.9rem, 4.4vw, 2.85rem); }
+.cm-en { margin: -8px 0 22px; font-style: italic; letter-spacing: 0.06em; color: var(--gold); }
+.cm-art { margin: 0; }
+.cm-art svg { display: block; width: 100%; max-width: 470px; height: auto; margin: 0 auto; }
+.cm-art-sun { fill: rgba(95, 107, 56, 0.1); }
+.cm-art-table { stroke: rgba(77, 59, 43, 0.28); stroke-width: 2; stroke-linecap: round; }
+.cm-art-cord { fill: none; stroke: var(--phone-deep); stroke-width: 4; stroke-linecap: round; }
+.cm-art-phone { fill: var(--phone); }
+.cm-art-deep { fill: var(--phone-deep); }
+.cm-art-shine { fill: none; stroke: rgba(255, 255, 255, 0.32); stroke-width: 3; stroke-linecap: round; }
+.cm-art-dial { fill: var(--cream); stroke: var(--phone-deep); stroke-width: 3; }
+.cm-art-holes circle { fill: var(--phone); }
+.cm-art-center { fill: var(--blush); stroke: var(--phone-deep); stroke-width: 2; }
+.cm-art-saucer { fill: #e7dfc6; }
+.cm-art-cup { fill: #fffaf0; stroke: var(--gold); stroke-width: 3; stroke-linejoin: round; }
+.cm-art-handle { fill: none; stroke: var(--gold); stroke-width: 5; stroke-linecap: round; }
+.cm-art-coffee { fill: var(--coffee); }
+.cm-art-steam path {
+  fill: none;
+  stroke: rgba(95, 107, 56, 0.45);
+  stroke-width: 3;
+  stroke-linecap: round;
+  animation: cm-steam 4.2s ease-in-out infinite;
+}
+.cm-art-steam path:nth-child(2) { animation-delay: 0.9s; }
+.cm-art-steam path:nth-child(3) { animation-delay: 1.8s; }
+@keyframes cm-steam {
+  0%, 100% { opacity: 0.35; transform: translateY(0); }
+  50% { opacity: 0.9; transform: translateY(-5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cm-art-steam path { animation: none; opacity: 0.7; }
+}
+
+/* 痛點與提問清單 */
+.cm-checks, .cm-qs, .cm-asks { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 12px; }
+.cm-checks li, .cm-qs li { position: relative; padding-left: 34px; color: var(--muted); }
+.cm-checks li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid var(--rose);
+  background: radial-gradient(circle, var(--rose) 0 3px, transparent 3.5px);
+}
+.cm-qs li { color: var(--ink); font-size: 1.04rem; }
+.cm-qs li::before { content: "？"; position: absolute; left: 0; color: var(--gold); }
+.cm-aside-text { margin: 22px 0 0; color: var(--muted); }
+.cm-asks { margin-top: 10px; gap: 8px; }
+.cm-asks li {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(95, 107, 56, 0.08);
+  color: var(--forest);
+}
+
+/* 三階段：圓圈由內往外亮，對應內在探索 → 價值整理 → 外在呈現 */
+.cm-stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.cm-stage {
+  position: relative;
+  background: var(--paper-strong);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 24px;
+  box-shadow: var(--shadow-sm);
+}
+.cm-stage + .cm-stage::before {
+  content: "→";
+  position: absolute;
+  left: -25px;
+  top: 38px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  background: var(--rose);
+  color: var(--cream);
+  z-index: 1;
+}
+.cm-rings { width: 44px; height: 44px; display: block; margin-bottom: 14px; }
+.cm-rings circle { fill: none; stroke: rgba(95, 107, 56, 0.25); stroke-width: 1.5; }
+.cm-rings .on { stroke: var(--rose); stroke-width: 3; }
+.cm-rings .on-fill { fill: var(--rose); stroke: var(--rose); }
+.cm-stage-tag { display: block; font-size: 0.8rem; letter-spacing: 0.16em; color: var(--gold); }
+.cm-stage h3 { font-size: 1.3rem; margin: 2px 0 0; }
+.cm-stage-sub { margin: 0 0 12px; color: var(--rose-deep); }
+.cm-stage ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 0.96rem; }
+.cm-stage li + li { margin-top: 6px; }
+
+/* 服務卡 */
+.cm-service { display: grid; align-content: start; gap: 10px; }
+.cm-service h3 { margin: 0; }
+.cm-letter {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--blush);
+  color: var(--rose-deep);
+  font-size: 0.95rem;
+}
+.cm-service .cm-for { color: var(--ink); }
+.cm-for span {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  background: rgba(95, 107, 56, 0.1);
+  color: var(--rose-deep);
+}
+.cm-service p + p { margin-top: 0; }
+.cm-service .cm-meta {
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  font-size: 0.9rem;
+  color: var(--cocoa);
+}
+.cm-meta a { color: var(--rose-deep); }
+
+/* 四步驟 */
+.cm-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.cm-steps li {
+  padding: 22px 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+.cm-step-no { display: block; font-size: 0.8rem; letter-spacing: 0.16em; color: var(--gold); }
+.cm-steps h3 { margin: 2px 0 0; font-size: 1.16rem; }
+.cm-step-sub { margin: 0 0 8px; color: var(--rose-deep); font-size: 0.94rem; }
+.cm-steps p:last-child { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.cm-partner {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 28px;
+}
+.cm-partner > div { flex: 1 1 420px; min-width: 0; }
+.cm-partner p { margin: 0; color: var(--muted); }
+
+/* 作品 */
+.cm-types { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.cm-case { margin-top: 18px; }
+.cm-case .flow { margin: 14px 0 12px; }
+.cm-case > p { margin: 0; color: var(--muted); }
+.cm-now { margin-top: 18px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.cm-now h3 { font-size: 1.02rem; }
+.cm-now .status { margin-left: 0; margin-top: 6px; display: table; }
+
+/* 行動邀請：全頁唯一的深色塊 */
+.cm-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  padding: 44px 42px;
+  border-radius: var(--radius-xl);
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(156, 114, 70, 0.32), transparent 36%),
+    linear-gradient(160deg, #3d4a31 0%, var(--forest) 60%, #283222 100%);
+  box-shadow: 0 26px 60px rgba(38, 39, 28, 0.22);
+}
+.cm-cta .eyebrow { color: #d7c39a; }
+.cm-cta h2 { font-size: clamp(1.5rem, 3.2vw, 2rem); }
+.cm-cta p { color: rgba(247, 242, 226, 0.84); margin: 0 0 12px; }
+.cm-cta .cm-cta-line { margin-top: 18px; font-size: 1.2rem; color: var(--cream); }
+.button.cm-on-dark-primary { background: var(--cream); border-color: var(--cream); color: var(--forest); }
+.button.cm-on-dark-primary:hover { background: #fffaf0; }
+.button.cm-on-dark { background: transparent; border-color: rgba(247, 242, 226, 0.5); color: var(--cream); }
+.cm-cta-aside {
+  padding: 26px 24px;
+  border-radius: var(--radius-lg);
+  background: rgba(247, 242, 226, 0.08);
+  border: 1px solid rgba(247, 242, 226, 0.18);
+}
+.cm-cta-aside h3 { color: var(--cream); margin-bottom: 14px; }
+.cm-cta-aside .steps li { color: rgba(247, 242, 226, 0.78); }
+.cm-cta-aside .steps strong { color: var(--cream); }
+body.cm .cm-cta-aside .steps li::before { background: rgba(247, 242, 226, 0.16); color: var(--cream); }
+.cm-cta .cm-cta-fine { margin: 18px 0 0; font-size: 0.86rem; color: rgba(247, 242, 226, 0.66); }
+.cm-core {
+  margin: 34px 0 0;
+  text-align: center;
+  font-size: 1.24rem;
+  color: var(--forest);
+  letter-spacing: 0.04em;
+}
+.cm-core span { display: block; margin-top: 6px; font-size: 0.86rem; letter-spacing: 0.12em; color: var(--faint); }
+
+@media (max-width: 960px) {
+  .cm-steps, .cm-types { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px) {
+  .cm-hero { grid-template-columns: 1fr; gap: 10px; }
+  .cm-art svg { max-width: 340px; }
+  .cm-stages { grid-template-columns: 1fr; gap: 26px; }
+  .cm-stage + .cm-stage::before { left: 50%; top: -27px; transform: translateX(-50%) rotate(90deg); }
+  .cm-cta { grid-template-columns: 1fr; padding: 32px 24px; }
+}
+
+@media (max-width: 560px) {
+  .cm-nav .cm-anchor { display: none; }
+  .cm-steps, .cm-types { grid-template-columns: 1fr; }
+}
