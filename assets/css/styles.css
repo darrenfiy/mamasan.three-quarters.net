@@ -748,88 +748,9 @@ body.cm .cm-cta-aside .steps li::before { background: rgba(247, 242, 226, 0.16);
   .cm-steps, .cm-types { grid-template-columns: 1fr; }
 }
 
-/* ---------- Co Me Time × 四分之三 聯名款（/cometime/onepage/） ---------- */
+/* ---------- Co Me Time × 四分之三 聯名款 ---------- */
 
-/* 首屏右側就是價格卡：這一頁要說的事是「划算」 */
-.cm-price-card {
-  padding: 30px 28px 26px;
-  border-radius: var(--radius-xl);
-  background: var(--paper-strong);
-  border: 1px solid rgba(95, 107, 56, 0.28);
-  box-shadow: var(--shadow);
-}
-.cm-price-card .cm-price-label { display: block; font-size: 0.82rem; letter-spacing: 0.16em; color: var(--gold); }
-.cm-price-now { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 14px; margin: 4px 0 2px; }
-.cm-price-now strong {
-  font-size: clamp(2.4rem, 6vw, 3.2rem);
-  line-height: 1.1;
-  color: var(--rose-deep);
-  font-weight: normal;
-  font-variant-numeric: tabular-nums;
-}
-.cm-price-was { color: var(--faint); font-size: 0.98rem; }
-.cm-price-was s { text-decoration-thickness: 1.5px; }
-.cm-price-save {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 2px 12px;
-  border-radius: 999px;
-  font-size: 0.86rem;
-  background: rgba(95, 107, 56, 0.12);
-  color: var(--rose-deep);
-}
-.cm-price-card ul { list-style: none; margin: 18px 0 0; padding: 16px 0 0; border-top: 1px dashed var(--line); display: grid; gap: 8px; }
-.cm-price-card li { position: relative; padding-left: 26px; color: var(--muted); }
-.cm-price-card li::before { content: "✓"; position: absolute; left: 0; color: var(--rose); }
-.cm-price-card .actions { margin-top: 20px; }
-
-/* 三欄價格比較：行情 → 分開買 → 聯名款 */
-.cm-compare { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
-.cm-compare article {
-  display: grid;
-  align-content: start;
-  gap: 8px;
-  padding: 26px 24px;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  background: var(--paper);
-}
-.cm-compare h3 { margin: 0; font-size: 1rem; color: var(--muted); font-weight: normal; letter-spacing: 0.06em; }
-.cm-compare .cm-num { font-size: 1.7rem; line-height: 1.3; color: var(--ink); font-variant-numeric: tabular-nums; }
-.cm-compare p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-.cm-compare .cm-src { font-size: 0.8rem; color: var(--faint); }
-.cm-compare .cm-src a { color: inherit; }
-.cm-compare .cm-best {
-  background: var(--forest);
-  border-color: var(--forest);
-  box-shadow: 0 20px 44px rgba(38, 39, 28, 0.2);
-}
-.cm-compare .cm-best h3 { color: #d7c39a; }
-.cm-compare .cm-best .cm-num { color: var(--cream); }
-.cm-compare .cm-best p { color: rgba(247, 242, 226, 0.84); }
-
-.cm-ai { margin-top: 18px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 22px 34px; align-items: start; }
-.cm-ai h3 { font-size: 1.2rem; }
-.cm-ai p { margin: 0 0 10px; color: var(--muted); }
-.cm-ai dl { margin: 0; display: grid; gap: 12px; }
-.cm-ai dl div { padding: 14px 18px; border-radius: var(--radius-md); background: rgba(95, 107, 56, 0.08); }
-.cm-ai dt { color: var(--rose-deep); font-size: 0.9rem; letter-spacing: 0.08em; }
-.cm-ai dd { margin: 2px 0 0; color: var(--ink); }
-
-/* 內容：左 Alisha（內在），右 四分之三（外在） */
-.cm-split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.cm-split .card h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
-.cm-split .card h3 small { font-size: 0.82rem; font-weight: normal; letter-spacing: 0.1em; color: var(--gold); }
-.cm-split ul { margin: 12px 0 0; padding-left: 20px; color: var(--muted); }
-.cm-split li + li { margin-top: 6px; }
-.cm-excl { margin-top: 18px; }
-.cm-excl h3 { font-size: 1rem; }
-.cm-excl ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); font-size: 0.95rem; }
-.cm-excl li + li { margin-top: 4px; }
-
-@media (max-width: 860px) {
-  .cm-compare, .cm-ai, .cm-split { grid-template-columns: 1fr; }
-}
+/* /cometime/onepage/ 自 2026-11-04 起是獨立模板，樣式在 cometime/onepage/template.css，不用本檔。 */
 
 /* /cometime/ 服務區底下通往聯名款的橫幅 */
 .cm-joint {
