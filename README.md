@@ -22,7 +22,7 @@
 | `/works/` | 04 我的作品 —— 案例、Podcast、短影音、文章 |
 | `/news/` | 05 最新公告 |
 | `/cometime/` | Co Me Time 一頁式網站（`2026-09-30` 新增預約頁；`2026-11-03` 依她的規劃改版為「內在探索 × 外在呈現」，奶油白＋橄欖綠配色只用在這頁）。頂端只有本頁段落錨點，預約走她自己帳號的 Tally 與 Google 日曆。改版對照、補寫句子與設定紀錄見 `mamasan-lab/3-cometime/landing/README.md` |
-| `/cometime/onepage/` | Co Me Time × 四分之三 聯名款（`2026-11-03` 新增）：品牌定位諮詢＋一頁式網站。**`2026-11-04` 起是可套給客人的一頁式模板 v1**：樣子取自 misotone（和紙米、明朝體、直排小字、票券框照片），十類素材各一區，字少、圖多。這頁只用同資料夾的 `template.css` 與 `img/`，不用全站 `styles.css`；整個資料夾複製出去，換色票、照片、文字就是新客人的頁。價格同時寫在 `/cometime/` 橫幅與四分之三服務頁，改價清單見 `darrenfiy-studio/OFFERINGS/mamasan-partner-menu/cometime-joint-packages.md` |
+| `/cometime/onepage/` | **`2026-11-04` 起只是轉址**：Co Me Time × 四分之三 聯名款頁搬到四分之三官網 `https://www.three-quarters.net/services/cometime/`（Darren：聯名服務要能出現在官網、維持官網風格；圖片改成服務本身）。這裡只留 meta refresh＋canonical，舊連結照樣能開。11-03 到 11-04 的模板 v1（`template.css`、`img/`）在 Git 歷史裡，`/cometime/` 的聯名款橫幅改連到新網址；改價清單見 `darrenfiy-studio/OFFERINGS/mamasan-partner-menu/cometime-joint-packages.md` |
 | `/shao/` | 宇宙媽媽燒的門面（`2026-09-27` 新增，`2026-09-30` 改版；選單在「服務」之後）。見下方〈媽媽燒門面〉 |
 | `/shao/candles/` | 希望之光 21 顆頻率蠟燭限定組。**建置產物，不要在這裡改**，見下方〈媽媽燒蠟燭頁〉 |
 
@@ -32,7 +32,7 @@
 
 ## 樣式
 
-單一 `assets/css/styles.css`，無 build、無相依套件、無 JavaScript。例外：`/cometime/onepage/` 用自己的 `template.css`，並從 Google Fonts 載入 Noto Serif TC／Noto Sans TC，讓沒有內建明朝體的 Windows 也排得出同樣的樣子。
+單一 `assets/css/styles.css`，無 build、無相依套件、無 JavaScript（`/cometime/onepage/` 的轉址只有一行 `location.replace`）。
 
 視覺上刻意與 `three-quarters.net` 同一家族（紙感米色、襯線字、圓角面板），
 但主色從公司的赭紅換成她自己定的**乾燥玫瑰 × 香檳金 × 墨綠** ——
@@ -49,12 +49,12 @@
 | `portrait-navy-seated.jpg` | 服務頁〈合作方式〉 | 坐著、朝向鏡頭，放在「從一次對話開始」旁邊 |
 | `og-mamasan.jpg` | 各頁分享預覽（LINE／FB） | 1200×630，由首頁標題與第一張人像合成 |
 | `og-cometime.jpg` | `/cometime/` 分享預覽 | 1200×630，`2026-11-03` 改版重做；原始檔 `mamasan-lab/3-cometime/landing/og-cometime.html` |
-| `og-onepage.jpg` | `/cometime/onepage/` 分享預覽 | 1200×630，標題與價格 NT$8,888；改價要重做，原始檔 `mamasan-lab/3-cometime/landing/og-onepage.html` |
+| `og-onepage.jpg` | 舊聯名款頁的分享預覽，`2026-11-04` 起沒有頁面在用（轉址頁改用官網的 `og-cometime.jpg`）；留著是怕已分享出去的連結還在讀它 | 1200×630，標題與價格 NT$8,888；原始檔 `mamasan-lab/3-cometime/landing/og-onepage.html` |
 
 三張人像是收到的原檔，沒有重新壓縮（853×1280，每張 30–40 KB，看起來是傳訊軟體壓過的版本）。
 若拿得到攝影師給的高解析原檔，用同檔名覆蓋即可，版面不用改。
 
-聯名款模板的照片放在 `cometime/onepage/img/`：四張 `alisha-*.jpg` 是她 `2026-11-04` 給的自拍處理版（裁掉路人、去掉杯上與背景的店家 logo、統一偏暖）。原檔與可重做的處理腳本在 `mamasan-lab/3-cometime/landing/photos/2026-11-04/`（`process.sh`）。三張 `work-*.jpg` 是作品首屏截圖，640×400。
+`2026-11-04` 聯名款模板 v1 曾用她四張自拍處理版（`cometime/onepage/img/alisha-*.jpg`）；頁面搬到官網後改用服務示意照，這四張已從網站移除，原檔與處理腳本仍在 `mamasan-lab/3-cometime/landing/photos/2026-11-04/`。
 
 照片背景是深藍灰（約 `#222a35`），框的底色用同一色，載入前不會閃白。
 拱形框與金色細線在 `styles.css` 的 `portraits` 段；手機上照片排在文字前面。
