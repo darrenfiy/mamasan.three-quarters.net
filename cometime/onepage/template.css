@@ -188,6 +188,22 @@ img { display: block; max-width: 100%; height: auto; }
 }
 .tp-hero-price { margin: 0; font-family: var(--serif); font-size: 1.05rem; color: var(--deep-muted); }
 .tp-hero-price strong { font-size: 1.9rem; font-weight: 500; color: var(--deep-ink); margin: 0 6px; font-variant-numeric: tabular-nums; }
+.tp-was { white-space: nowrap; }
+/* 名額標籤：深底上用米色，淺底上用赤褐 */
+.tp-chip {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 1px 10px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.tp-hero-price .tp-chip { color: var(--deep-ink); }
+.tp-amount .tp-chip { font-size: 0.9rem; color: var(--deep); margin-left: 14px; line-height: 1.6; }
 
 /* ---------- 02 痛點 ---------- */
 
