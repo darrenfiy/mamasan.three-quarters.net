@@ -1,4 +1,4 @@
-// Co Me Time 蠟燭版的兩個動作（2026-11-06，Claude）。沒有 JS 時：動畫停在第一格，蠟燭那一排不出現，內容不受影響。
+// Co Me Time 蠟燭版的兩個動作（2026-11-06，Claude）。沒有 JS 時：動畫停在第一格，語言蠟燭那一排不出現，內容不受影響。
 (function () {
   var motion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
   function still() { return !!(motion && motion.matches); }
@@ -74,7 +74,6 @@
   }
 
   /* ---------- 一排蠟燭 ----------
-     兩排共用：「把火傳下去」的七根，第一根的火始終一樣大，這就是整個概念；
      「我聽得懂」的七根，每亮一根，飄帶上就亮一種語言，第七根是靈性。
      聲音用瀏覽器現場合成，沒有音檔。 */
   var COUNT = 7;
@@ -233,23 +232,6 @@
     opt.words(lit, goBtn);
   }
 
-  var fireSay = document.getElementById('chain-say');
-  makeRow({
-    chain: 'chain', row: 'chain-row', go: 'chain-go', mute: 'chain-sound', defs: true,
-    words: function (lit, goBtn) {
-      if (lit >= COUNT) {
-        fireSay.textContent = '全部亮了。第一根的火，還是一樣大。';
-        goBtn.textContent = '再來一次';
-      } else if (lit === 1) {
-        fireSay.textContent = '第一根已經亮了。按一下，把火傳下去。';
-        goBtn.textContent = '把火傳下去';
-      } else {
-        fireSay.textContent = '亮了 ' + lit + ' 根。第一根的火，還是一樣大。';
-        goBtn.textContent = '把火傳下去';
-      }
-    },
-  });
-
   // 語言：順序與 index.html 的 data-w 對應。西班牙文只會一點點，照實寫。
   var LANGS = [
     ['中文', '中文：妳好。'],
@@ -266,7 +248,7 @@
     langSvg.classList.add('is-live');
     var langWords = langSvg.querySelectorAll('.cl-w');
     makeRow({
-      chain: 'lang-chain', row: 'lang-row', go: 'lang-go', mute: 'lang-sound',
+      chain: 'lang-chain', row: 'lang-row', go: 'lang-go', mute: 'lang-sound', defs: true,
       names: LANGS.map(function (l) { return l[0]; }),
       words: function (lit, goBtn) {
         for (var w = 0; w < langWords.length; w++) {

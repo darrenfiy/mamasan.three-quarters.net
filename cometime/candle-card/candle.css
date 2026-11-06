@@ -191,7 +191,7 @@ h1, h2, h3 { font-family: var(--serif); }
 .cl-lines { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .cl-lines li { padding: 15px 0; border-bottom: 1px solid var(--line); font-family: var(--serif); font-size: 1.04rem; line-height: 1.7; }
 
-/* ---------- 03 為什麼是蠟燭 ---------- */
+/* ---------- 一排蠟燭（語言段） ---------- */
 
 .cl-chain { margin-bottom: 34px; }
 .cl-chain[hidden] { display: none; }
@@ -229,11 +229,6 @@ h1, h2, h3 { font-family: var(--serif); }
 .cl-chain-btns { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .cl-sound { min-height: 44px; padding: 6px 14px; border: 1px solid var(--on-dark-line); border-radius: 999px; background: none; color: var(--on-dark-muted); font: 400 0.86rem/1.3 var(--sans); cursor: pointer; }
 .cl-sound:hover { color: var(--on-dark); border-color: var(--on-dark-muted); }
-
-.cl-creed { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; margin: 0; border-top: 1px solid var(--on-dark-line); }
-.cl-creed > div { padding-top: 18px; }
-.cl-creed dt { font-size: 0.82rem; letter-spacing: 0.3em; color: var(--on-dark-muted); }
-.cl-creed dd { margin: 6px 0 0; font-family: var(--serif); font-size: clamp(1.7rem, 4.6vw, 3rem); font-weight: 700; line-height: 1.3; letter-spacing: 0.06em; }
 
 /* ---------- 04 方法 ---------- */
 
@@ -355,7 +350,6 @@ h1, h2, h3 { font-family: var(--serif); }
   .cl-pain > div { order: 1; }
   .cl-lines { order: 3; }
   .cl-candle { max-width: none; }
-  .cl-creed { gap: 0 16px; }
   .cl-steps {
     grid-auto-flow: column;
     grid-template-columns: none;
@@ -430,6 +424,7 @@ h1, h2, h3 { font-family: var(--serif); }
 .cl-land { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 24px 48px; align-items: center; }
 .cl-land p { margin: 12px 0 0; color: var(--muted); }
 .cl-land p a { color: var(--copper); }
+.cl-land p.cl-land-lead { font-family: var(--serif); font-size: clamp(1.08rem, 2.2vw, 1.25rem); line-height: 1.6; color: var(--ember-2); }
 .cl-land-pair { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 12px; align-items: center; }
 .cl-land-pair .cl-ticket { --r: 14px; background: var(--flame); }
 .cl-land p.cl-land-cap { margin: 10px 0 0; font-size: 0.84rem; line-height: 1.5; text-align: center; }

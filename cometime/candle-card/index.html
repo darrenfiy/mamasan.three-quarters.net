@@ -24,7 +24,7 @@
 <!--
   Co Me Time 蠟燭版・動態名片（2026-11-06，Claude）。第二份候選頁：現行 /cometime/ 與第一份 /cometime/candle/ 都不動，她選了才換；選定前保持 noindex。
   這一份多的是她的三張圖與橫向連結：蠟燭被點燃是意象，動態名片是落地；她走過、她聽得懂、我們做得出來。正本見下方「方向正本」。
-  方法、名片、問答與價格區的字是她 11-06 下午給的原文（原稿在 mamasan-lab 3-cometime/2026-11-06-第二份候選頁修改原稿.md），不要潤飾；她說「動態名片」「數位名片」，不再用「會動的名片」。
+  方法、名片、自我介紹、語言、落地、問答與價格區的字是她 11-06 給的原文（落地段調了兩處，見 landing README；原稿在 mamasan-lab 3-cometime/2026-11-06-第二份候選頁修改原稿.md），不要潤飾；她說「動態名片」「數位名片」，不再用「會動的名片」。
   brand-talk、moving-card、street-card、languages 四張圖以她的原圖為參考用 Vertex 重出，提示詞與收據在 Drive 想法箱。
   排法比照四分之三官網的聯名款頁（services/cometime/）：每區一張圓角色紙、直排小字、票券框、細線分列、問答之後才是價格。
   顏色由夜色走到燭光，整頁就是一根蠟燭亮起來的過程。
@@ -38,8 +38,8 @@
     <div class="page cl-nav">
       <a class="cl-brand" href="../../index.html"><strong>Co Me Time</strong><span>宇宙媽媽賞</span></a>
       <nav class="cl-nav-links" aria-label="本頁段落">
-        <a href="#why">為什麼是蠟燭</a>
         <a href="#method">怎麼亮起來</a>
+        <a href="#card">動態名片</a>
         <a href="#about">誰陪妳聊</a>
         <a href="#faq">常見問題</a>
         <a class="cl-nav-cta" href="#contact">預約</a>
@@ -95,31 +95,6 @@
         <li>想拍影片，卻不知道要說什麼，也不知道怎麼呈現自己。</li>
         <li>腦子裡有很多想法，不知道怎麼變成真的。</li>
       </ul>
-    </section>
-
-    <!-- 03 為什麼是蠟燭：使命、願景，加上可以自己點的一排蠟燭（candle.js 畫；沒有 JS 時只剩文字） -->
-    <section class="cl-sheet cl-dusk" id="why">
-      <div class="cl-head">
-        <div>
-          <span class="cl-label">WHY／為什麼是蠟燭</span>
-          <h2 class="cl-h2">火傳出去，自己不會變小。</h2>
-        </div>
-        <p>先亮自己，再點別人。這是 Co Me Time 和四分之三一起走的方向。</p>
-      </div>
-      <div class="cl-chain" id="chain" hidden>
-        <div class="cl-chain-row" id="chain-row" aria-hidden="true"></div>
-        <div class="cl-chain-foot">
-          <p class="cl-chain-say" id="chain-say" aria-live="polite">第一根已經亮了。按一下，把火傳下去。</p>
-          <div class="cl-chain-btns">
-            <button class="btn btn-flame" id="chain-go" type="button">把火傳下去</button>
-            <button class="cl-sound" id="chain-sound" type="button" aria-pressed="true">聲音：開</button>
-          </div>
-        </div>
-      </div>
-      <dl class="cl-creed">
-        <div><dt>使命</dt><dd>點燃別人</dd></div>
-        <div><dt>願景</dt><dd>世界亮起來</dd></div>
-      </dl>
     </section>
 
     <!-- 04 方法：標題、英文標籤、說明、第一步都是她的原文 -->
@@ -242,10 +217,12 @@
       <div>
         <span class="cl-label">WHO／我走過</span>
         <h2 class="cl-h2">嗨，我是 Alisha。</h2>
-        <p>我曾在莫斯科留學，也在日本生活多年；接觸身心靈與自我探索超過十年，也創過業、經營過貿易公司，經歷過婚姻、成為母親。</p>
-        <p>有很長一段時間，我也把自己放到最後。妳現在卡住的地方，很多我都卡過。很多人喜歡找我聊天，大概就是因為這樣。</p>
-        <p>一路走來，我發現自己很擅長透過對話，看見一個人身上尚未被自己發現的特點、天賦與可能性。</p>
-        <blockquote class="cl-quote">我陪妳把走過的人生，整理成妳可以重新活出的自己。</blockquote>
+        <p>我曾在莫斯科留學，也在日本生活多年；接觸身心靈與自我探索超過十年，經歷過創業、貿易、婚姻，也成為三個孩子的媽媽。</p>
+        <p>人生走過不同的階段，我也曾經把自己放到最後，經歷過迷惘、卡關，以及重新認識自己的過程。</p>
+        <p>或許因為這些經歷，很多人喜歡找我聊天，分享生活、工作，甚至那些不知道該怎麼說出口的心事。</p>
+        <p>我發現自己很擅長透過對話，聽見一個人話語背後真正想表達的事，也看見那些連當事人都還沒發現的特點、天賦與可能性。</p>
+        <blockquote class="cl-quote">我相信，每個人走過的路都有意義。</blockquote>
+        <p>我想做的，就是陪妳重新認識自己，把過去累積的人生經驗，整理成妳看得見的價值，也找到接下來想走的方向。</p>
         <a class="cl-more" href="../#about">讀完整的自我介紹 →</a>
       </div>
     </section>
@@ -292,23 +269,24 @@
         </div>
       </div>
       <div class="cl-lang-text">
-        <p>語言讓我跟各式各樣的人都聊得起來，也讓我可以把對的人牽在一起。需要拍攝，我介紹老師；需要網站和系統，我接到工程師那裡。</p>
-        <p>靈性這一種，學校沒有教。妳說能量、直覺、靈魂的功課，不用先解釋，我聽得懂；我也能幫妳翻成別人聽得懂的話。</p>
+        <p>多元語言讓我能傾聽不同世界的故事，也讓我成為那座牽線的橋樑。需要影像拍攝，我替妳安排合適的老師；需要網站與系統架構，四分之三團隊與專業工程師就在這裡為妳接棒。</p>
+        <p>靈性這一塊，學校沒教，但妳懂的頻率我都懂。那些關於能量、直覺與靈魂的功課，妳不需要費心解釋；我能聽懂妳的內在語言，並幫妳「翻譯」成大眾聽得懂、用得上的日常實踐。</p>
       </div>
     </section>
 
-    <!-- 07 之三 我們做得出來：Darren 用 AI 把她的想法落地，她用同一套幫跟她有一樣困難的人（Darren 11-06）。縱向只放這一段，重點留給她。 -->
+    <!-- 07 之三 落地：她 11-06 傍晚的字。她要專業、可信賴、有溫度、不像廣告標語，所以第三段補上她自己列的重點「不需要懂技術」，末段與第二段重複沒放；原文在 mamasan-lab 3-cometime/2026-11-06-第二份候選頁修改原稿.md。縱向只放這一段，重點留給她。 -->
     <section class="cl-sheet cl-paper cl-land">
       <div>
-        <span class="cl-label">LANDING／我們做得出來</span>
-        <h2 class="cl-h2">我的天馬行空，有人幫我落地。</h2>
-        <p>我的想法很多，以前常常只停在腦子裡。遇到<a href="https://www.three-quarters.net/">四分之三</a>的 Darren 之後，他用 AI 把這些想法變成程式、App 和網頁。</p>
-        <p>現在我用同一套，陪跟我有一樣困難的妳。妳只要找我一個人。</p>
+        <span class="cl-label">LANDING</span>
+        <h2 class="cl-h2">讓想法，真正成為可能。</h2>
+        <p class="cl-land-lead">好的想法，不該只停留在腦海裡。</p>
+        <p>Alisha 負責理解需求、梳理想法與整合資源，<a href="https://www.three-quarters.net/">四分之三團隊</a>則運用 AI 與技術，將創意轉化為實際可運用的網站、App 與數位工具。</p>
+        <p>從最初的想法，到最後的實際呈現，妳不需要自己懂技術，也不必獨自摸索、分別尋找不同的專業團隊。</p>
       </div>
       <div class="cl-land-pair">
         <div>
           <figure class="cl-ticket"><img src="media/from-picture.webp" width="720" height="748" alt="Alisha 傳來的圖：一根亮著的蠟燭用火柴點亮另一根" loading="lazy"></figure>
-          <p class="cl-land-cap">一開始，是我傳給他的一張圖</p>
+          <p class="cl-land-cap">一開始，是 Alisha 傳來的一張圖</p>
         </div>
         <span class="cl-land-arrow" aria-hidden="true">→</span>
         <div>
