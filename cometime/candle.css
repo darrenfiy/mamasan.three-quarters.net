@@ -1,4 +1,4 @@
-/* Co Me Time 蠟燭版（2026-11-06，Claude）
+/* Co Me Time 現行版（2026-11-06 定案，Claude）
    排法比照四分之三聯名款頁；顏色取自〈點亮心火〉：夜空、暮色、餘燼、蠟白、燭光。整頁從暗走到亮。 */
 
 :root {
@@ -252,14 +252,8 @@ h1, h2, h3 { font-family: var(--serif); }
 .cl-taste h3 { margin: 0 0 4px; font-weight: 500; font-size: 1.08rem; }
 .cl-taste p { margin: 0; font-size: 0.94rem; color: var(--muted); }
 
-/* ---------- 06 亮起來之後 ---------- */
+/* ---------- 06 動態名片（其餘規則在檔尾） ---------- */
 
-.cl-after { display: grid; grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr); gap: 28px clamp(28px, 5vw, 64px); align-items: center; padding-block: 58px 38px; }
-.cl-after-photo { aspect-ratio: 3 / 4; --r: 20px; background: var(--copper); transform: rotate(2deg); }
-.cl-after-photo img { object-position: 50% 30%; }
-.cl-after .cl-h2 { margin-bottom: 24px; }
-.cl-after .cl-lines li { font-family: var(--sans); font-size: 0.96rem; color: var(--muted); }
-.cl-after .cl-lines strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.1rem; color: var(--ink); }
 .cl-after-note { margin: 18px 0 0; font-size: 0.92rem; color: var(--muted); }
 
 /* ---------- 07 誰陪妳聊 ---------- */
@@ -269,7 +263,6 @@ h1, h2, h3 { font-family: var(--serif); }
 .cl-who .cl-h2 { margin-bottom: 10px; }
 .cl-who p { margin: 0 0 8px; max-width: 42em; color: var(--muted); }
 .cl-quote { margin: 18px 0 14px; font-family: var(--serif); font-size: clamp(1.15rem, 2.4vw, 1.5rem); line-height: 1.6; letter-spacing: 0.03em; color: var(--ember-2); }
-.cl-more { color: var(--copper); font-size: 0.94rem; }
 
 /* ---------- 08 問答 ---------- */
 
@@ -325,14 +318,12 @@ h1, h2, h3 { font-family: var(--serif); }
 @media (max-width: 980px) {
   .cl-pain { grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr); }
   .cl-lines { grid-column: 1 / -1; }
-  .cl-after .cl-lines { grid-column: auto; }
   .cl-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 22px; }
 }
 
 @media (max-width: 860px) {
   .cl-hero-grid, .cl-price, .cl-cta, .cl-menu { grid-template-columns: minmax(0, 1fr); }
   .cl-hero-media { order: 2; }
-  .cl-after { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
   .cl-cta .cl-ticket { width: min(240px, 70%); }
 }
 
@@ -367,8 +358,6 @@ h1, h2, h3 { font-family: var(--serif); }
   .cl-swipe { display: block; margin: 16px 0 0; font-size: 0.8rem; letter-spacing: 0.12em; color: var(--on-dark-muted); }
   .cl-taste li { grid-template-columns: 3.4rem minmax(0, 1fr); gap: 2px 12px; }
   .cl-taste-name { font-size: 1.25rem; }
-  .cl-after { grid-template-columns: minmax(0, 1fr); padding-block: 40px 26px; }
-  .cl-after-photo { width: 62%; justify-self: center; }
   .cl-who { grid-template-columns: minmax(0, 1fr); padding-block: 36px 30px; }
   .cl-avatar { width: 150px; border-radius: 75px 75px 14px 14px; }
   .cl-faq-a { margin-left: 0; }
@@ -381,7 +370,7 @@ h1, h2, h3 { font-family: var(--serif); }
   .cl-candle.lit .flame { animation: none; }
 }
 
-/* ---------- 會動的名片版多出來的部分（2026-11-06） ---------- */
+/* ---------- 品牌對談、動態名片、語言、落地 ---------- */
 
 .cl-story { grid-column: 1 / -1; margin-top: 12px; }
 .cl-wide { aspect-ratio: 1376 / 768; --r: 24px; }
