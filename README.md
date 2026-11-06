@@ -23,7 +23,7 @@
 | `/news/` | 05 最新公告 |
 | `/cometime/` | Co Me Time 一頁式網站（`2026-09-30` 新增預約頁；`2026-11-03` 依她的規劃改版為「內在探索 × 外在呈現」，奶油白＋橄欖綠配色只用在這頁）。頂端只有本頁段落錨點，預約走她自己帳號的 Tally 與 Google 日曆。改版對照、補寫句子與設定紀錄見 `mamasan-lab/3-cometime/landing/README.md` |
 | `/cometime/candle/` | **`2026-11-06` 候選頁，`noindex`**：Co Me Time 的蠟燭版（有聲動畫、可以自己傳火的一排蠟燭）。現行 `/cometime/` 不動，她選了才換。資料夾可整包複製，不用全站樣式。紀錄見 `mamasan-lab/3-cometime/landing/README.md` |
-| `/cometime/candle-card/` | **`2026-11-06` 第二份候選頁，`noindex`**：蠟燭版加會動的名片、品牌對談、多語言對談，強調她橫向連結。第一份與現行 `/cometime/` 都不動，她選了才換。圖是本機修過的確認稿，上線前要重出。資料夾可整包複製。紀錄見 `mamasan-lab/3-cometime/landing/README.md` |
+| `/cometime/candle-card/` | **`2026-11-06` 第二份候選頁，`noindex`**：蠟燭版加動態名片、品牌對談、多語言對談，強調她橫向連結。方法、名片、問答與價格區的字是她 11-06 給的原文，不要潤飾。第一份與現行 `/cometime/` 的版面都不動，她選了才換。四張圖以她的原圖為參考用 Vertex 重出。資料夾可整包複製。紀錄見 `mamasan-lab/3-cometime/landing/README.md` |
 | `/cometime/onepage/` | **`2026-11-04` 起只是轉址**：Co Me Time × 四分之三 聯名款頁搬到四分之三官網 `https://www.three-quarters.net/services/cometime/`（Darren：聯名服務要能出現在官網、維持官網風格；圖片改成服務本身）。這裡只留 meta refresh＋canonical，舊連結照樣能開。11-03 到 11-04 的模板 v1（`template.css`、`img/`）在 Git 歷史裡，`/cometime/` 的聯名款橫幅改連到新網址；改價清單見 `darrenfiy-studio/OFFERINGS/mamasan-partner-menu/cometime-joint-packages.md` |
 | `/shao/` | 宇宙媽媽燒的門面（`2026-09-27` 新增，`2026-09-30` 改版；選單在「服務」之後）。見下方〈媽媽燒門面〉 |
 | `/shao/candles/` | 希望之光 21 顆頻率蠟燭限定組。**建置產物，不要在這裡改**，見下方〈媽媽燒蠟燭頁〉 |

@@ -242,6 +242,7 @@ h1, h2, h3 { font-family: var(--serif); }
 .cl-no { display: block; padding-bottom: 10px; border-bottom: 1px solid var(--on-dark-line); font-family: var(--serif); font-size: 2.1rem; line-height: 1; letter-spacing: 0.04em; color: var(--flame-2); }
 .cl-steps h3 { margin: 14px 0 6px; font-weight: 500; font-size: 1.16rem; letter-spacing: 0.04em; }
 .cl-steps p { margin: 0; font-size: 0.93rem; color: var(--on-dark-muted); }
+.cl-steps p.cl-step-lead { margin-bottom: 6px; font-family: var(--serif); font-size: 1.02rem; line-height: 1.5; color: var(--flame-2); }
 .cl-swipe { display: none; }
 
 /* ---------- 05 心靈品嚐菜單 ---------- */
@@ -279,11 +280,11 @@ h1, h2, h3 { font-family: var(--serif); }
 
 .cl-faq { padding-block: 44px 28px; }
 .cl-faq .cl-head { margin-bottom: 22px; }
-.cl-faq-list { border-top: 1px solid var(--line); }
-.cl-faq details { border-bottom: 1px solid var(--line); }
+.cl-faq-list { counter-reset: faq; border-top: 1px solid var(--line); }
+.cl-faq details { counter-increment: faq; border-bottom: 1px solid var(--line); }
 .cl-faq summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 2.2rem minmax(0, 1fr) 1.6rem; align-items: center; gap: 10px; padding: 18px 0; font-family: var(--serif); font-size: 1.06rem; }
 .cl-faq summary::-webkit-details-marker { display: none; }
-.cl-faq summary::before { content: "Q"; font-size: 1.35rem; color: var(--flame); }
+.cl-faq summary::before { content: "Q" counter(faq); font-size: 1.2rem; color: var(--copper); }
 .cl-faq summary::after { content: "＋"; justify-self: end; color: var(--muted); transition: transform 0.2s; }
 .cl-faq details[open] summary::after { transform: rotate(45deg); }
 .cl-faq summary h3 { margin: 0; font: inherit; font-weight: 500; }
@@ -307,7 +308,7 @@ h1, h2, h3 { font-family: var(--serif); }
 .cl-joint { display: block; padding: 24px; border-radius: var(--radius-lg); background: rgba(244, 173, 69, 0.13); text-decoration: none; transition: background 0.2s ease; }
 .cl-joint:hover { background: rgba(244, 173, 69, 0.24); }
 .cl-joint .cl-label { margin-bottom: 8px; }
-.cl-joint strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.14rem; line-height: 1.5; }
+.cl-joint strong { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(1.2rem, 2.4vw, 1.42rem); line-height: 1.5; letter-spacing: 0.03em; color: var(--ember-2); }
 .cl-joint span:not(.cl-label) { display: block; margin-top: 6px; font-size: 0.92rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .cl-joint em { display: block; margin-top: 10px; font-style: normal; font-size: 0.92rem; color: var(--copper); }
 
@@ -389,26 +390,34 @@ h1, h2, h3 { font-family: var(--serif); }
 /* ---------- 會動的名片版多出來的部分（2026-11-06） ---------- */
 
 .cl-story { grid-column: 1 / -1; margin-top: 12px; }
-.cl-wide { aspect-ratio: 1600 / 873; --r: 24px; }
+.cl-wide { aspect-ratio: 1376 / 768; --r: 24px; }
 .cl-story-say { margin: 14px 0 0; font-family: var(--serif); font-size: clamp(1.1rem, 2.2vw, 1.35rem); line-height: 1.6; letter-spacing: 0.03em; text-align: center; color: var(--ember-2); }
 
 .cl-card { padding-block: 58px 38px; }
 .cl-card-pics { display: grid; grid-template-columns: minmax(0, 1.79fr) minmax(0, 1fr); gap: 24px; }
-.cl-card-one { aspect-ratio: 1288 / 977; --r: 24px; background: var(--copper); }
-.cl-card-all { aspect-ratio: 768 / 1042; --r: 24px; background: var(--copper); }
-.cl-card-say { margin: 26px 0 18px; font-family: var(--serif); font-size: clamp(1.2rem, 2.6vw, 1.6rem); line-height: 1.5; letter-spacing: 0.04em; color: var(--ember-2); }
+.cl-card-one { aspect-ratio: 1200 / 896; --r: 24px; background: var(--copper); }
+.cl-card-all { aspect-ratio: 896 / 1200; --r: 24px; background: var(--copper); }
+.cl-head p.cl-head-strong { font-family: var(--serif); font-size: clamp(1.05rem, 2vw, 1.2rem); line-height: 1.6; color: var(--ember-2); }
+.cl-card-intro { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 40px; margin-bottom: 30px; }
+.cl-card-intro p { margin: 0; color: var(--muted); }
+.cl-card-sub { margin: 0 0 22px; color: var(--muted); }
+.cl-card-say { margin: 26px 0 8px; font-family: var(--serif); font-size: clamp(1.2rem, 2.6vw, 1.6rem); line-height: 1.5; letter-spacing: 0.04em; color: var(--ember-2); }
 .cl-card-lines { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 32px; border-top: 1px solid var(--line); }
 .cl-card-lines li { padding: 15px 0; font-size: 0.96rem; line-height: 1.7; color: var(--muted); }
-.cl-card-lines strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.1rem; color: var(--ink); }
+.cl-card-no { display: block; margin-bottom: 8px; font-family: var(--serif); font-size: 1.5rem; line-height: 1; color: var(--copper); }
+.cl-card-lines strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.2rem; color: var(--ink); }
+.cl-card-lines em { display: block; margin-top: 2px; font-family: var(--serif); font-style: normal; font-size: 0.98rem; color: var(--ember-2); }
+.cl-card-lines p { margin: 8px 0 0; }
+.cl-card .cl-after-note { margin-top: 26px; font-size: 0.96rem; }
+.cl-card .cl-after-note strong { display: block; margin-bottom: 4px; font-family: var(--serif); font-weight: 500; font-size: clamp(1.08rem, 2.2vw, 1.25rem); color: var(--ink); }
 
 .cl-lang .cl-head { margin-bottom: 24px; }
-.cl-stage { margin: 0 0 8px; overflow: hidden; aspect-ratio: 1280 / 698; border-radius: 26px; box-shadow: 0 0 0 1px var(--on-dark-line); }
+.cl-stage { margin: 0 0 8px; overflow: hidden; aspect-ratio: 1376 / 768; border-radius: 26px; box-shadow: 0 0 0 1px var(--on-dark-line); }
 .cl-stage-in { position: relative; width: 100%; }
 .cl-stage-in img { width: 100%; height: auto; }
 .cl-stage-in svg { position: absolute; inset: 0; width: 100%; height: 100%; }
-.cl-ribbons { fill: none; stroke: #fff3d6; stroke-width: 1.6; stroke-linecap: round; opacity: 0.9; }
-.cl-w { font-family: var(--serif); font-weight: 700; fill: #3b2412; paint-order: stroke; stroke: rgba(255, 243, 214, 0.75); stroke-width: 4px; transition: opacity 0.35s ease; }
-.cl-stage svg.is-live .cl-w { opacity: 0.42; }
+.cl-w { font-family: var(--serif); font-weight: 700; fill: #3b2412; paint-order: stroke; stroke: rgba(255, 243, 214, 0.86); stroke-width: 5px; transition: opacity 0.35s ease; }
+.cl-stage svg.is-live .cl-w { opacity: 0.62; }
 .cl-stage svg.is-live .cl-w.is-on { opacity: 1; }
 .cl-lang .cl-chain { margin-bottom: 22px; }
 .cl-lang-row { justify-content: space-around; padding-top: 8px; }
@@ -430,6 +439,7 @@ h1, h2, h3 { font-family: var(--serif); }
   .cl-wide { aspect-ratio: 4 / 3; --r: 18px; }
   .cl-wide img { object-position: 85% 50%; }
   .cl-card { padding-block: 40px 26px; }
+  .cl-card-intro { grid-template-columns: minmax(0, 1fr); margin-bottom: 22px; }
   .cl-card-pics { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .cl-card-one { aspect-ratio: 4 / 5; --r: 18px; }
   .cl-card-one img { object-position: 46% 60%; }
