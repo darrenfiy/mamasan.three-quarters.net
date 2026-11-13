@@ -24,7 +24,7 @@
   Co Me Time 現行版（2026-11-06 定案，Claude）。以後只有這一版，要修就修這裡。舊版在 Git fc39c42。
   蠟燭被點燃是意象，動態名片是落地；她走過、她聽得懂、我們做得出來。正本見下方「方向正本」。
   方法、名片、自我介紹、語言、問答與價格區的字是她 11-06 給的原文，不要潤飾（落地段依她的方向調過兩處）；原稿在 mamasan-lab 3-cometime/2026-11-06-第二份候選頁修改原稿.md。她說「動態名片」「數位名片」，不用「會動的名片」。
-  brand-talk、moving-card、street-card、languages 四張圖以她的原圖為參考用 Vertex 重出，提示詞與收據在 Drive 想法箱。
+  step-seen、brand-talk、moving-card、street-card、languages 五張圖 2026-11-13 改成跟首屏動畫同一種卡通蠟燭（Darren：卡通蠟燭是錨點），用 Vertex 以〈點亮心火的蠟燭聚會〉為參考重出；提示詞與收據在 Drive 想法箱。
   排法比照四分之三官網的聯名款頁（services/cometime/）：每區一張圓角色紙、直排小字、票券框、細線分列、問答之後才是價格。
   資料夾可整包複製：只用同資料夾的 candle.css、candle.js 與 media/，不用全站樣式。
   分享預覽（title、description、og:*、og-candle.jpg）一律不放價格（mamasan 2026-11-05）。
@@ -107,26 +107,26 @@
       <ol class="cl-steps" tabindex="0" aria-label="四個步驟（手機上可以左右捲動）">
         <li>
           <figure class="cl-pill"><img src="media/step-match.webp" width="560" height="385" alt="火柴靠近一根還沒點的蠟燭" loading="lazy"></figure>
-          <span class="cl-no">01</span>
+          <span class="cl-no">01<span class="cl-step-spark" aria-hidden="true"></span></span>
           <h3>點火</h3>
           <p class="cl-step-lead"><span class="cl-nb">一場專屬於妳的</span> <span class="cl-nb">Coffee Me Time</span></p>
           <p>預約與 Alisha 一對一深度交流 90 分鐘，找個舒服的空間，喝杯喜歡的飲品，從聊天開始，重新看見自己。</p>
         </li>
         <li>
           <figure class="cl-pill"><img src="media/step-lit.webp" width="560" height="385" alt="蠟燭亮了，開心地舉起雙手" loading="lazy"></figure>
-          <span class="cl-no">02</span>
+          <span class="cl-no">02<span class="cl-step-spark" aria-hidden="true"></span></span>
           <h3>亮起來</h3>
           <p>整理妳的故事與價值，找到自己的定位和服務項目。</p>
         </li>
         <li>
-          <figure class="cl-pill"><img src="media/step-seen.webp" width="600" height="412" alt="一位女性走在街上，身上是發光的個人網頁" loading="lazy"></figure>
-          <span class="cl-no">03</span>
+          <figure class="cl-pill"><img src="media/step-seen.webp" width="860" height="590" alt="剛亮起來的小蠟燭走上街，胸前是發光的個人網頁，身邊飄著影片和照片" loading="lazy"></figure>
+          <span class="cl-no">03<span class="cl-step-spark" aria-hidden="true"></span></span>
           <h3>動態名片</h3>
           <p>有了定位，就能拍短影音，有自己的網站或系統。妳走到哪，名片就到哪。</p>
         </li>
         <li>
           <figure class="cl-pill"><img src="media/step-next.webp" width="700" height="481" alt="一道光串起滿室亮著的蠟燭" loading="lazy"></figure>
-          <span class="cl-no">04</span>
+          <span class="cl-no">04<span class="cl-step-spark" aria-hidden="true"></span></span>
           <h3>點下一根</h3>
           <p>妳用自己的服務，陪下一個人亮起來。</p>
         </li>
@@ -157,7 +157,7 @@
       </ul>
       <div class="cl-story">
         <figure class="cl-ticket cl-wide">
-          <img src="media/brand-talk.webp" width="1376" height="768" alt="Alisha 和一位女性對坐聊天，金色的光從兩人之間流過，化成妳的故事、妳的定位、妳的價值、妳的顏色，最後變成一頁網站" loading="lazy">
+          <img src="media/brand-talk.webp" width="1376" height="768" alt="點火的高蠟燭和剛亮起來的小蠟燭對坐喝咖啡，金色的光從小蠟燭身上流出，化成故事書、指南針、寶石、調色盤，最後變成一頁網站" loading="lazy">
         </figure>
         <p class="cl-story-say">聊出來的，會變成妳的定位、顏色和網站。</p>
       </div>
@@ -178,10 +178,10 @@
       </div>
       <div class="cl-card-pics">
         <figure class="cl-ticket cl-card-one">
-          <img src="media/moving-card.webp" width="1200" height="896" alt="一個木頭人走在街上，頭上的牌子寫著 Co Me Time，手上的卷軸寫著「現在，我是一張動態名片！」，身邊的人胸前也都掛著自己的名牌" loading="lazy">
+          <img src="media/moving-card.webp" width="1200" height="896" alt="小蠟燭走在老街上，胸前掛著自己的動態名片，手上的卷軸寫著「現在，我是一張動態名片！」，身邊的蠟燭胸前也都掛著自己的名牌" loading="lazy">
         </figure>
         <figure class="cl-ticket cl-card-all">
-          <img src="media/street-card.webp" width="896" height="1200" alt="街上來來往往的人，每個人身上都掛著自己的一頁式網頁" loading="lazy">
+          <img src="media/street-card.webp" width="896" height="1200" alt="街上來來往往的蠟燭，每一根都亮著，身上掛著自己的一頁式網頁" loading="lazy">
         </figure>
       </div>
       <p class="cl-card-say"><span class="cl-nb">每個人，</span><span class="cl-nb">都值得擁有一張自己的數位名片。</span></p>
@@ -234,16 +234,16 @@
       </div>
       <figure class="cl-stage">
         <div class="cl-stage-in">
-          <img src="media/languages.webp" width="1376" height="768" alt="兩位女性對坐，發光的飄帶在她們之間流動" loading="lazy">
+          <img src="media/languages.webp" width="1376" height="768" alt="點火的高蠟燭和一根圍著圍巾的小蠟燭對坐，發光的飄帶在她們之間流動" loading="lazy">
           <svg id="lang-words" viewBox="0 0 1376 768" role="img" aria-label="飄帶上是不同語言的問候：妳好、こんにちは、Здравствуйте、Hello、Lí hó、¡Hola!，還有靈性">
             <defs>
-              <path id="cl-p1" d="M716 162Q800 104 892 144"/>
-              <path id="cl-p2" d="M744 240Q846 206 966 246"/>
-              <path id="cl-p3" d="M800 166Q880 146 958 186"/>
-              <path id="cl-p4" d="M560 170Q640 172 730 204"/>
-              <path id="cl-p5" d="M620 322Q700 298 780 300"/>
-              <path id="cl-p6" d="M540 372Q660 396 790 374"/>
-              <path id="cl-p7" d="M880 380Q980 410 1080 372"/>
+              <path id="cl-p1" d="M1040 240Q1125 278 1205 305"/>
+              <path id="cl-p2" d="M672 302Q730 262 790 220"/>
+              <path id="cl-p3" d="M995 212Q1080 222 1190 264"/>
+              <path id="cl-p4" d="M415 304Q475 300 540 324"/>
+              <path id="cl-p5" d="M440 278Q500 248 565 268"/>
+              <path id="cl-p6" d="M555 336Q690 408 825 340"/>
+              <path id="cl-p7" d="M820 194Q905 170 990 208"/>
             </defs>
             <text class="cl-w" data-w="0" lang="zh-Hant" font-size="34"><textPath href="#cl-p2" startOffset="50%" text-anchor="middle">妳好</textPath></text>
             <text class="cl-w" data-w="1" lang="ja" font-size="26"><textPath href="#cl-p3" startOffset="50%" text-anchor="middle">こんにちは</textPath></text>

@@ -240,6 +240,65 @@ h1, h2, h3 { font-family: var(--serif); }
 .cl-steps p.cl-step-lead { margin-bottom: 6px; font-family: var(--serif); font-size: 1.02rem; line-height: 1.5; color: var(--flame-2); }
 .cl-swipe { display: none; }
 
+/* 金線：四步編號底下的四段細線接成一條光，一顆火花從 01 走到 04（mamasan 11-13 參考圖的「流暢度」）。
+   每段往右多伸一個間距接到下一步；火花逐段接力：每段 1.2 秒走完，下一段延遲 1.2 秒出發。 */
+.cl-steps { --gap: 26px; --spark-cycle: 7.2s; }
+.cl-steps li { position: relative; }
+.cl-steps .cl-pill { box-shadow: 0 0 0 1px rgba(255, 217, 138, 0.18), 0 10px 34px rgba(244, 173, 69, 0.22); }
+.cl-no { position: relative; border-bottom: 0; }
+.cl-no::before,
+.cl-no::after { content: ""; position: absolute; bottom: -1px; pointer-events: none; }
+.cl-no::before {
+  left: 0;
+  right: calc(-1 * var(--gap));
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(255, 217, 138, 0.85), rgba(244, 173, 69, 0.7));
+  box-shadow: 0 0 8px rgba(255, 200, 110, 0.55), 0 0 18px rgba(244, 173, 69, 0.3);
+}
+.cl-steps li:first-child .cl-no::before { background: linear-gradient(90deg, rgba(255, 217, 138, 0) 0, rgba(255, 217, 138, 0.9) 14%, rgba(244, 173, 69, 0.7)); }
+.cl-steps li:last-child .cl-no::before { right: 0; background: linear-gradient(90deg, rgba(244, 173, 69, 0.7), rgba(255, 217, 138, 0.9) 70%, rgba(255, 217, 138, 0)); }
+/* 每一步的起點一顆小火：火花經過時亮一下 */
+.cl-no::after {
+  left: -2px;
+  bottom: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffbe8 0 30%, var(--flame-2) 55%, rgba(244, 173, 69, 0) 72%);
+  box-shadow: 0 0 10px 3px rgba(255, 200, 110, 0.6);
+  animation: cl-node var(--spark-cycle) ease-out infinite;
+  animation-delay: var(--d, 0s);
+}
+.cl-step-spark {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 46px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 80% 50%, #fffdf0 0 18%, rgba(255, 217, 138, 0.9) 34%, rgba(244, 173, 69, 0) 72%);
+  filter: blur(0.3px);
+  opacity: 0;
+  pointer-events: none;
+  animation: cl-spark var(--spark-cycle) linear infinite;
+  animation-delay: var(--d, 0s);
+}
+.cl-steps li:nth-child(2) { --d: 1.2s; }
+.cl-steps li:nth-child(3) { --d: 2.4s; }
+.cl-steps li:nth-child(4) { --d: 3.6s; }
+@keyframes cl-spark {
+  0% { left: -24px; opacity: 0; }
+  2% { opacity: 1; }
+  16.6% { left: calc(100% + var(--gap) - 30px); opacity: 1; }
+  18%, 100% { left: calc(100% + var(--gap) - 30px); opacity: 0; }
+}
+@keyframes cl-node {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 10px 3px rgba(255, 200, 110, 0.55); }
+  3% { transform: scale(1.5); box-shadow: 0 0 18px 7px rgba(255, 215, 140, 0.85); }
+  14% { transform: scale(1); box-shadow: 0 0 10px 3px rgba(255, 200, 110, 0.55); }
+}
+
 /* ---------- 05 心靈品嚐菜單 ---------- */
 
 .cl-menu { display: grid; grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr); gap: 24px 52px; align-items: center; }
@@ -318,7 +377,7 @@ h1, h2, h3 { font-family: var(--serif); }
 @media (max-width: 980px) {
   .cl-pain { grid-template-columns: minmax(0, 0.42fr) minmax(0, 1fr); }
   .cl-lines { grid-column: 1 / -1; }
-  .cl-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 22px; }
+  .cl-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 22px; --gap: 22px; }
 }
 
 @media (max-width: 860px) {
@@ -346,6 +405,7 @@ h1, h2, h3 { font-family: var(--serif); }
     grid-template-columns: none;
     grid-auto-columns: 78%;
     gap: 16px;
+    --gap: 16px;
     margin-inline: -20px;
     padding: 0 20px 4px;
     overflow-x: auto;
@@ -368,6 +428,8 @@ h1, h2, h3 { font-family: var(--serif); }
   html { scroll-behavior: auto; }
   .btn, .cl-film-frame video, .cl-candle .flame { transition: none; }
   .cl-candle.lit .flame { animation: none; }
+  .cl-no::after { animation: none; }
+  .cl-step-spark { display: none; }
 }
 
 /* ---------- 品牌對談、動態名片、語言、落地 ---------- */
