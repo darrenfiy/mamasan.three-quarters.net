@@ -1,18 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700&display=swap");
+
+/* 2026-11-13 起全站改用 Co Me Time 的燭光色（夜色、燭火、蠟、紙），吉祥物是卡通蠟燭。
+   舊的玫瑰／金／墨綠變數名保留，值換成燭光家族，子頁不用改 class 就跟著換。
+   /cometime/ 仍自帶 candle.css；/shao/ 仍用自己的酒紅（--ember-*）。 */
 :root {
-  --bg: #f8f3ec;
-  --bg-deep: #efe5da;
-  --paper: rgba(255, 253, 250, 0.90);
-  --paper-strong: rgba(255, 252, 248, 0.96);
-  --ink: #2a2320;
-  --muted: #6d5f58;
-  --faint: #8d8078;
-  --line: rgba(42, 35, 32, 0.12);
-  --rose: #9d5f6b;
-  --rose-deep: #7d4753;
-  --blush: #e6d2cc;
-  --gold: #b48a4a;
-  --forest: #31483f;
-  --cocoa: #4a3a32;
+  --bg: #fbf4e6;
+  --bg-deep: #f4e6cc;
+  --paper: rgba(255, 250, 240, 0.92);
+  --paper-strong: #fffaf0;
+  --ink: #2a2018;
+  --muted: #6a5a49;
+  --faint: #8d7a66;
+  --line: rgba(70, 50, 30, 0.16);
+  --rose: #93572c;
+  --rose-deep: #6e3d1f;
+  --blush: #f6e2bd;
+  --gold: #d99a3a;
+  --forest: #1d2044;
+  --cocoa: #4a3424;
+  --night: #11152d;
+  --night-2: #1d2044;
+  --dusk: #33284a;
+  --dusk-2: #4a3150;
+  --ember: #7b4526;
+  --ember-2: #5d3320;
+  --flame: #f4ad45;
+  --flame-2: #ffd98a;
+  --on-dark: #fbf1de;
+  --on-dark-muted: rgba(251, 241, 222, 0.78);
+  --on-dark-line: rgba(251, 241, 222, 0.22);
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   --ember-bg: #2a0911;
   --ember-gold: #d9a44b;
   --ember-cream: #f7ecdc;
@@ -31,14 +49,18 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at 0% 0%, rgba(157, 95, 107, 0.14), transparent 32%),
-    radial-gradient(circle at 100% 14%, rgba(180, 138, 74, 0.13), transparent 30%),
-    radial-gradient(circle at 52% 8%, rgba(49, 72, 63, 0.08), transparent 24%),
-    linear-gradient(180deg, #fdfaf6 0%, var(--bg) 52%, var(--bg-deep) 100%);
-  font-family: Georgia, "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+    radial-gradient(circle at 0% 0%, rgba(244, 173, 69, 0.12), transparent 32%),
+    radial-gradient(circle at 100% 14%, rgba(255, 217, 138, 0.18), transparent 30%),
+    linear-gradient(180deg, #fffaf1 0%, var(--bg) 52%, var(--bg-deep) 100%);
+  font-family: var(--sans);
   line-height: 1.85;
+  overflow-wrap: anywhere;
   -webkit-font-smoothing: antialiased;
 }
+
+h1, h2, h3, .brand strong, .quote, blockquote { font-family: var(--serif); }
+h1, h2, h3 { font-weight: 500; }
+:focus-visible { outline: 3px solid var(--flame); outline-offset: 3px; }
 
 a { color: inherit; }
 img { display: block; max-width: 100%; height: auto; }
@@ -55,7 +77,7 @@ img { display: block; max-width: 100%; height: auto; }
   top: 0;
   z-index: 20;
   backdrop-filter: blur(18px);
-  background: rgba(248, 243, 236, 0.82);
+  background: rgba(251, 244, 230, 0.86);
   border-bottom: 1px solid var(--line);
 }
 
@@ -87,10 +109,8 @@ img { display: block; max-width: 100%; height: auto; }
   font-size: 0.94rem;
   transition: background 0.2s, color 0.2s;
 }
-.nav-links a:hover, .nav-links a.active {
-  color: var(--rose-deep);
-  background: rgba(255, 255, 255, 0.62);
-}
+.nav-links a:hover { color: var(--rose-deep); background: rgba(255, 255, 255, 0.62); }
+.nav-links a.active { color: var(--paper-strong); background: var(--ink); }
 .nav-links a.outbound { color: var(--faint); font-size: 0.86rem; }
 
 /* ---------- hero ---------- */
@@ -146,9 +166,10 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
   transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
 }
 .button:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
-.button.primary { background: var(--rose); border-color: var(--rose); color: #fffaf7; }
-.button.primary:hover { background: var(--rose-deep); }
-.button.warm { background: rgba(230, 210, 204, 0.6); border-color: rgba(157, 95, 107, 0.28); }
+.button.primary { background: var(--ink); border-color: var(--ink); color: var(--paper-strong); }
+.button.primary:hover { background: #443425; }
+.button.warm { background: var(--flame); border-color: var(--flame); color: var(--ink); box-shadow: 0 0 22px rgba(244, 173, 69, 0.32); }
+.button.warm:hover { background: var(--flame-2); }
 
 /* ---------- portraits ---------- */
 
@@ -171,7 +192,7 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
   content: "";
   position: absolute;
   inset: -14px 14px 14px -14px;
-  border: 1px solid rgba(180, 138, 74, 0.6);
+  border: 1px solid rgba(217, 154, 58, 0.6);
   z-index: -1;
 }
 
@@ -339,7 +360,7 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
   color: var(--cocoa);
   padding: 5px 14px;
   border-radius: 999px;
-  background: rgba(230, 210, 204, 0.5);
+  background: rgba(246, 226, 189, 0.7);
 }
 
 /* ---------- definition list ---------- */
@@ -373,7 +394,7 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: rgba(230, 210, 204, 0.62);
+  background: rgba(246, 226, 189, 0.85);
   color: var(--rose-deep);
   display: grid;
   place-items: center;
@@ -392,7 +413,7 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
   font-size: 0.92rem;
   color: var(--cocoa);
 }
-.flow li.mark { background: rgba(157, 95, 107, 0.13); border-color: rgba(157, 95, 107, 0.3); }
+.flow li.mark { background: rgba(244, 173, 69, 0.2); border-color: rgba(217, 154, 58, 0.45); }
 .flow .arrow { border: 0; background: none; color: var(--faint); padding: 0 2px; }
 
 /* ---------- status ---------- */
@@ -416,7 +437,7 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
 .prose p:first-child { margin-top: 0; }
 .prose ul { color: var(--muted); padding-left: 20px; }
 .prose li { margin-bottom: 6px; }
-.prose strong { color: var(--ink); font-weight: normal; border-bottom: 1px solid rgba(157, 95, 107, 0.35); }
+.prose strong { color: var(--ink); font-weight: normal; border-bottom: 1px solid rgba(217, 154, 58, 0.55); }
 
 .tagrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
 .tag {
@@ -466,4 +487,196 @@ h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0.02em; }
   .nav-links { gap: 3px; }
   .nav-links a { padding: 5px 10px; font-size: 0.86rem; }
   .section { padding: 30px 0; }
+}
+
+/* ---------- 首頁：燭光版（2026-11-13）----------
+   以 /cometime/ 一頁式為主軸：色紙區塊（夜色、燭芯、黃昏、紙、燭光）、票券框、金線、手繪小蠟燭。
+   之後其他頁要升級，就拿這一段的元件來排，不必再發明一套。 */
+
+.home { display: flex; flex-direction: column; padding-bottom: 12px; }
+.home section[id] { scroll-margin-top: 90px; }
+.h-sheet { position: relative; margin-block: 14px; padding: clamp(26px, 5vw, 58px); border-radius: var(--radius-xl); }
+.h-night { background: radial-gradient(circle at 82% 8%, #2c2f63, var(--night-2) 38%, var(--night) 78%); color: var(--on-dark); overflow: hidden; }
+.h-dusk { background: radial-gradient(circle at 14% 0%, var(--dusk-2), var(--dusk) 65%); color: var(--on-dark); }
+.h-ember { background: linear-gradient(160deg, var(--ember), var(--ember-2)); color: var(--on-dark); }
+.h-paper { background: var(--paper-strong); border: 1px solid var(--line); box-shadow: 0 18px 40px rgba(70, 40, 15, 0.07); }
+.h-glow { background: radial-gradient(circle at 78% 28%, #ffe6a8, var(--flame-2) 42%, var(--flame) 100%); color: var(--ink); }
+.h-plain { padding-block: clamp(36px, 6vw, 62px); }
+
+.h-label { display: block; margin-bottom: 14px; color: var(--rose); font-size: 0.76rem; font-weight: 500; letter-spacing: 0.22em; }
+.h-night .h-label, .h-dusk .h-label, .h-ember .h-label { color: var(--flame-2); }
+.h-h2 { margin: 0; font-weight: 500; font-size: clamp(1.5rem, 3.4vw, 2.3rem); line-height: 1.45; letter-spacing: 0.04em; text-wrap: balance; }
+.h-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px 40px; margin-bottom: 30px; }
+.h-head p { margin: 0; max-width: 30em; color: var(--muted); }
+.h-dusk .h-head p, .h-ember .h-head p, .h-night .h-head p { color: var(--on-dark-muted); }
+.h-nb { display: inline-block; }
+.h-sheet .lead { color: inherit; opacity: 0.86; }
+.h-night .lead-strong, .h-ember .lead-strong { color: var(--flame-2); opacity: 1; }
+.h-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 10px 26px; border: 1px solid transparent; border-radius: 999px; font: 500 1rem/1.4 var(--sans); letter-spacing: 0.04em; text-decoration: none; transition: transform 0.18s ease, background 0.18s ease; }
+.btn:hover { transform: translateY(-2px); }
+.btn-flame { background: var(--flame); color: var(--ink); box-shadow: 0 0 26px rgba(244, 173, 69, 0.42); }
+.btn-flame:hover { background: var(--flame-2); }
+.btn-line { color: var(--on-dark); border-color: rgba(251, 241, 222, 0.5); }
+.btn-line:hover { background: rgba(251, 241, 222, 0.1); }
+.btn-ink { background: var(--ink); color: var(--paper-strong); }
+.btn-ink:hover { background: #443425; }
+.btn-outline { color: var(--ink); border-color: rgba(42, 32, 24, 0.55); }
+.btn-outline:hover { background: rgba(42, 32, 24, 0.07); }
+
+/* 票券框：四角內凹，比照 Co Me Time */
+.h-ticket {
+  --r: 22px;
+  --rim: 3px;
+  position: relative;
+  margin: 0;
+  padding: var(--rim);
+  background: var(--flame);
+  -webkit-mask:
+    radial-gradient(circle at 0 0, #0000 var(--r), #000 calc(var(--r) + 0.5px)) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 0, #0000 var(--r), #000 calc(var(--r) + 0.5px)) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle at 0 100%, #0000 var(--r), #000 calc(var(--r) + 0.5px)) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 100%, #0000 var(--r), #000 calc(var(--r) + 0.5px)) 100% 100% / 51% 51% no-repeat;
+          mask:
+    radial-gradient(circle at 0 0, #0000 var(--r), #000 calc(var(--r) + 0.5px)) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 0, #0000 var(--r), #000 calc(var(--r) + 0.5px)) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle at 0 100%, #0000 var(--r), #000 calc(var(--r) + 0.5px)) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle at 100% 100%, #0000 var(--r), #000 calc(var(--r) + 0.5px)) 100% 100% / 51% 51% no-repeat;
+}
+.h-ticket img {
+  --ri: calc(var(--r) + var(--rim));
+  --o: calc(-1 * var(--rim));
+  --f: calc(100% + var(--rim));
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-mask:
+    radial-gradient(circle at var(--o) var(--o), #0000 var(--ri), #000 calc(var(--ri) + 0.5px)) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle at var(--f) var(--o), #0000 var(--ri), #000 calc(var(--ri) + 0.5px)) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle at var(--o) var(--f), #0000 var(--ri), #000 calc(var(--ri) + 0.5px)) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle at var(--f) var(--f), #0000 var(--ri), #000 calc(var(--ri) + 0.5px)) 100% 100% / 51% 51% no-repeat;
+          mask:
+    radial-gradient(circle at var(--o) var(--o), #0000 var(--ri), #000 calc(var(--ri) + 0.5px)) 0 0 / 51% 51% no-repeat,
+    radial-gradient(circle at var(--f) var(--o), #0000 var(--ri), #000 calc(var(--ri) + 0.5px)) 100% 0 / 51% 51% no-repeat,
+    radial-gradient(circle at var(--o) var(--f), #0000 var(--ri), #000 calc(var(--ri) + 0.5px)) 0 100% / 51% 51% no-repeat,
+    radial-gradient(circle at var(--f) var(--f), #0000 var(--ri), #000 calc(var(--ri) + 0.5px)) 100% 100% / 51% 51% no-repeat;
+}
+.h-pill { margin: 0; overflow: hidden; aspect-ratio: 16 / 11; border-radius: 999px; box-shadow: 0 0 0 1px rgba(255, 217, 138, 0.18), 0 10px 34px rgba(244, 173, 69, 0.22); }
+.h-pill img { width: 100%; height: 100%; object-fit: cover; }
+
+/* 01 首屏 */
+.h-hero-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 32px 48px; align-items: center; }
+.h-hero h1 { margin: 0 0 22px; font-size: clamp(2.1rem, 5.4vw, 3.6rem); line-height: 1.3; letter-spacing: 0.06em; }
+.h-hero-media { display: flex; align-items: flex-start; justify-content: flex-end; gap: 18px; }
+.h-hero-media .portrait { width: min(340px, 100%); }
+.h-hero-media .portrait::before { border-color: rgba(255, 217, 138, 0.55); }
+.h-vertical { margin: 0; writing-mode: vertical-rl; font-family: var(--serif); font-size: 0.98rem; letter-spacing: 0.24em; line-height: 2; color: var(--flame-2); }
+
+/* 02 五根小蠟燭：見自己、抱自己、謝自己、愛自己、給自己（手繪 SVG，跟 Co Me Time 語言段同一種） */
+.h-selves { text-align: center; }
+.h-selves .quote-lg { display: inline-block; border: 0; padding: 0; text-align: center; font-size: clamp(1.25rem, 2.8vw, 1.7rem); line-height: 1.7; color: var(--ink); }
+.h-candles { list-style: none; display: flex; justify-content: center; align-items: flex-end; gap: clamp(6px, 3vw, 34px); margin: 30px auto 0; padding: 0; max-width: 640px; border-bottom: 1px solid var(--line); }
+.h-candles li { flex: 1 1 0; max-width: 96px; min-width: 0; }
+.h-candles svg { display: block; width: 100%; height: auto; overflow: visible; }
+.h-candles li:nth-child(even) svg { transform: scale(0.9); transform-origin: 50% 100%; }
+.h-candles .wax { fill: #f7dda8; transition: fill 0.5s ease; }
+.h-candles .drip { fill: #fff1cd; transition: fill 0.5s ease; }
+.h-candles .wick { stroke: #3c2a1c; stroke-width: 3; stroke-linecap: round; fill: none; }
+.h-candles .face { fill: #4a3424; }
+.h-candles .face-line { fill: none; stroke: #4a3424; stroke-width: 2.4; stroke-linecap: round; }
+.h-candles .is-off { opacity: 0; transition: opacity 0.3s ease; }
+.h-candles .is-on, .h-candles .flame, .h-candles .halo { transition: opacity 0.4s ease; }
+.h-candles .flame { transform-box: fill-box; transform-origin: 50% 90%; animation: h-flicker 2.6s ease-in-out infinite; }
+.h-candles li:nth-child(2) .flame { animation-delay: -0.7s; }
+.h-candles li:nth-child(3) .flame { animation-delay: -1.3s; }
+.h-candles li:nth-child(4) .flame { animation-delay: -0.4s; }
+.h-candles li:nth-child(5) .flame { animation-delay: -1.9s; }
+/* 有 JS 時先熄著，捲到這裡才一根一根點亮；沒有 JS 就一直亮著 */
+.h-candles.is-waiting li:not(.lit) .flame,
+.h-candles.is-waiting li:not(.lit) .halo,
+.h-candles.is-waiting li:not(.lit) .is-on { opacity: 0; }
+.h-candles.is-waiting li:not(.lit) .is-off { opacity: 1; }
+.h-candles.is-waiting li:not(.lit) .wax { fill: #e6cda2; }
+.h-candles.is-waiting li:not(.lit) .drip { fill: #f3e0ba; }
+.h-candles span { display: block; margin: 10px 0 12px; font-family: var(--serif); font-size: clamp(0.82rem, 2.4vw, 1rem); letter-spacing: 0.08em; color: var(--cocoa); white-space: nowrap; }
+@keyframes h-flicker { 0%, 100% { transform: scale(1, 1) rotate(0deg); } 30% { transform: scale(0.96, 1.05) rotate(-2deg); } 60% { transform: scale(1.03, 0.97) rotate(1.5deg); } }
+
+/* 03 Co Me Time：整站的主軸 */
+.h-ct-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 28px 48px; align-items: center; }
+.h-ct-grid .h-ticket { aspect-ratio: 16 / 10; }
+.h-ct .h-h2 { font-size: clamp(1.7rem, 4vw, 2.7rem); }
+.h-ct-rest { display: block; margin-top: 10px; font-family: var(--serif); font-size: clamp(1.1rem, 2.2vw, 1.4rem); letter-spacing: 0.08em; color: var(--flame-2); }
+
+/* 04 三個原則：一條金線串起來 */
+.h-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; --gap: 26px; }
+.h-steps li { position: relative; }
+.h-steps .h-pill { margin-bottom: 18px; }
+.h-steps h3 { position: relative; margin: 0 0 10px; padding-bottom: 12px; font-size: clamp(1.3rem, 2.4vw, 1.6rem); letter-spacing: 0.08em; color: var(--rose-deep); }
+.h-steps h3::before { content: ""; position: absolute; left: 0; right: calc(-1 * var(--gap)); bottom: -1px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, rgba(217, 154, 58, 0.85), rgba(244, 173, 69, 0.7)); box-shadow: 0 0 8px rgba(244, 173, 69, 0.45); }
+.h-steps li:first-child h3::before { background: linear-gradient(90deg, rgba(217, 154, 58, 0), rgba(217, 154, 58, 0.9) 14%, rgba(244, 173, 69, 0.7)); }
+.h-steps li:last-child h3::before { right: 0; background: linear-gradient(90deg, rgba(244, 173, 69, 0.7), rgba(217, 154, 58, 0.9) 70%, rgba(217, 154, 58, 0)); }
+.h-steps h3::after { content: ""; position: absolute; left: -2px; bottom: -5px; width: 10px; height: 10px; border-radius: 50%; background: radial-gradient(circle, #fffbe8 0 30%, var(--flame) 55%, rgba(244, 173, 69, 0) 72%); box-shadow: 0 0 10px 3px rgba(244, 173, 69, 0.45); }
+.h-steps p { margin: 0; color: var(--muted); }
+
+/* 05 這個網站有什麼 */
+.h-map { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.h-map a { display: flex; flex-direction: column; height: 100%; text-decoration: none; transition: transform 0.18s ease; }
+.h-map a:hover { transform: translateY(-3px); }
+.h-map .h-ticket { aspect-ratio: 4 / 3; margin-bottom: 16px; }
+.h-map h3 { margin: 0 0 6px; font-size: 1.2rem; letter-spacing: 0.06em; }
+.h-map p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.h-map .more { margin-top: auto; padding-top: 12px; color: var(--rose); font-size: 0.9rem; }
+
+/* 06 核心方法 */
+.h-method { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 30px 48px; align-items: start; }
+.h-method .tag { color: var(--on-dark); border-color: var(--on-dark-line); }
+.h-who { padding: 26px 24px; border-radius: var(--radius-lg); background: rgba(251, 241, 222, 0.08); border: 1px solid var(--on-dark-line); }
+.h-who h3 { margin: 0 0 12px; color: var(--flame-2); }
+.h-who-top { display: grid; grid-template-columns: minmax(0, 1fr) 96px; gap: 16px; align-items: start; }
+.h-who-top img { width: 96px; border-radius: 48px 48px 14px 14px; }
+.h-who ul { margin: 0; padding-left: 20px; color: var(--on-dark-muted); }
+.h-who li { margin-bottom: 6px; }
+.h-who .quote { margin-top: 18px; border-left-color: var(--flame); color: var(--on-dark); }
+
+/* 07 輕贏實驗室怎麼運轉：一條金線，最後回到起點 */
+.h-loop { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 18px 0; }
+.h-loop li { position: relative; display: flex; align-items: center; padding-right: 34px; }
+.h-loop li::after { content: ""; position: absolute; right: 6px; top: 50%; width: 22px; height: 2px; background: linear-gradient(90deg, var(--gold), var(--flame)); box-shadow: 0 0 6px rgba(244, 173, 69, 0.5); }
+.h-loop li:last-child::after { content: "\21BA"; width: auto; height: auto; transform: translateY(-52%); background: none; box-shadow: none; color: var(--gold); font-size: 1.2rem; }
+.h-loop span { padding: 7px 15px; border-radius: 999px; background: var(--paper-strong); border: 1px solid var(--line); font-size: 0.94rem; color: var(--cocoa); white-space: nowrap; }
+.h-loop .mark span { background: var(--flame-2); border-color: rgba(217, 154, 58, 0.6); box-shadow: 0 0 18px rgba(244, 173, 69, 0.35); color: var(--ink); }
+
+/* 08 聯絡 */
+.h-cta { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr); gap: 28px 48px; align-items: center; }
+.h-cta .h-ticket { aspect-ratio: 4 / 5; justify-self: end; width: min(260px, 100%); }
+.h-cta .lead { color: var(--cocoa); opacity: 1; }
+
+@media (max-width: 980px) {
+  .h-map { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .h-hero-grid, .h-ct-grid, .h-method, .h-cta { grid-template-columns: minmax(0, 1fr); }
+  .h-hero-media { order: -1; justify-content: center; }
+  .h-hero-media .portrait { width: min(260px, 70%); margin: 10px 0 0; }
+  .h-steps { grid-template-columns: minmax(0, 1fr); gap: 34px; }
+  .h-steps h3::before { right: 0; }
+  .h-steps .h-pill { max-width: 420px; }
+  .h-cta .h-ticket { justify-self: start; width: min(220px, 60%); }
+}
+@media (max-width: 720px) {
+  .h-sheet { padding: 28px 20px; border-radius: 26px; margin-block: 10px; }
+  .h-vertical { font-size: 0.82rem; letter-spacing: 0.14em; line-height: 1.9; }
+  .h-actions .btn { flex: 1 1 100%; }
+  .h-map { gap: 26px 16px; }
+  .h-map p { font-size: 0.9rem; }
+  .h-loop li { padding-right: 28px; }
+  .h-loop li::after { width: 16px; }
+}
+@media (max-width: 480px) {
+  .h-map { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .h-map a { transition: none; }
+  .h-candles .flame { animation: none; }
 }

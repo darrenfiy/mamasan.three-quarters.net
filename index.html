@@ -14,8 +14,16 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./assets/js/home.js" defer></script>
 </head>
+<!--
+  首頁燭光版（2026-11-13，Claude）。Darren：以 /cometime/ 一頁式當整個官網的主軸，卡通蠟燭是 mamasan 的吉祥物。
+  這一版是之後修正的地基：字沿用舊首頁（都是她的話），排法與元件比照 /cometime/，元件在 styles.css 的〈首頁：燭光版〉段。
+  吉祥物插圖在 assets/img/mascot/：about、lab、shao、works 四張 11-13 用 Vertex 出（製作紀錄在 Drive 想法箱），其餘六張複製自 /cometime/media/。
+-->
 <body>
   <header class="site-header">
     <div class="page nav">
@@ -35,113 +43,146 @@
     </div>
   </header>
 
-  <main class="page">
-    <section class="hero">
-      <div class="hero-grid with-portrait">
-        <div class="panel">
-          <span class="eyebrow">宇宙媽媽賞</span>
-          <h1>我來，<br class="br-wide">是陪妳找回真實的自己。</h1>
-          <p class="lead lead-strong">
-            五十歲之前，我把人生花在成全別人。五十歲之後，我想開始學著成就自己 ——
-            也陪其他人這樣做。
-          </p>
-          <p class="lead">
-            我走過跨國生活、婚姻、母職、離婚與重新進入職場。那段最迷惘的日子讓我發現一件事：
-            很多人已經很努力了，只是太久沒有真正回頭看自己。
-          </p>
-          <p class="lead">
-            所以我做的事情，是在某個混亂的時刻，陪一個人把自己重新看清楚；人生怎麼走，由那個人自己決定。
-          </p>
-          <div class="actions">
-            <a class="button primary" href="./about/">認識我</a>
-            <a class="button warm" href="./lab/">進入輕贏實驗室</a>
-            <a class="button" href="./services/">看我提供的服務</a>
+  <main class="page home">
+    <!-- 01 首屏 -->
+    <section class="h-sheet h-night h-hero">
+      <div class="h-hero-grid">
+        <div>
+          <span class="h-label">宇宙媽媽賞｜輕贏實驗室</span>
+          <h1><span class="h-nb">我來，</span><br><span class="h-nb">是陪妳找回</span><span class="h-nb">真實的自己。</span></h1>
+          <p class="lead lead-strong">五十歲之前，我把人生花在成全別人。五十歲之後，我想開始學著成就自己 —— 也陪其他人這樣做。</p>
+          <p class="lead">我走過跨國生活、婚姻、母職、離婚與重新進入職場。那段最迷惘的日子讓我發現一件事：很多人已經很努力了，只是太久沒有真正回頭看自己。</p>
+          <p class="lead">所以我做的事情，是在某個混亂的時刻，陪一個人把自己重新看清楚；人生怎麼走，由那個人自己決定。</p>
+          <div class="h-actions">
+            <a class="btn btn-flame" href="./cometime/">預約 Co Me Time</a>
+            <a class="btn btn-line" href="./about/">認識我</a>
           </div>
         </div>
-
-        <figure class="portrait portrait-arch">
-          <img src="./assets/img/portrait-white-smile.jpg" width="853" height="1280"
-               alt="宇宙媽媽賞身穿白色西裝外套，手輕拉衣襟，笑著看向鏡頭" fetchpriority="high">
-        </figure>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="panel panel-soft">
-        <blockquote class="quote quote-lg">
-          有時候，我們只是<br>太久沒有回來自己身上。
-        </blockquote>
-        <div class="grid cards" style="margin-top:26px;">
-          <article class="card card-accent">
-            <h3>輕贏</h3>
-            <p>輕盈的狀態，加上比昨天的自己更進步。跟昨天的自己比，標準由自己定。</p>
-          </article>
-          <article class="card card-gold">
-            <h3>走出趣</h3>
-            <p>先幫自己走出去，走出去之後就能幫助別人。</p>
-          </article>
-          <article class="card card-forest">
-            <h3>伯樂</h3>
-            <p>先當自己的伯樂，然後成為別人的伯樂。</p>
-          </article>
+        <div class="h-hero-media">
+          <p class="h-vertical">陪妳把人生<br>重新活回來。</p>
+          <figure class="portrait portrait-arch">
+            <img src="./assets/img/portrait-white-smile.jpg" width="853" height="1280"
+                 alt="宇宙媽媽賞身穿白色西裝外套，手輕拉衣襟，笑著看向鏡頭" fetchpriority="high">
+          </figure>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="ribbon">
-        <span>見自己</span>
-        <span>抱自己</span>
-        <span>謝自己</span>
-        <span>愛自己</span>
-        <span>給自己</span>
-      </div>
+    <!-- 02 五根小蠟燭：舊首頁的「見自己、抱自己、謝自己、愛自己、給自己」 -->
+    <section class="h-selves h-plain">
+      <blockquote class="quote quote-lg">有時候，我們只是<br>太久沒有回來自己身上。</blockquote>
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="h-halo"><stop offset="0" stop-color="#ffcf70" stop-opacity=".62"/><stop offset="1" stop-color="#ffcf70" stop-opacity="0"/></radialGradient>
+          <linearGradient id="h-flame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb33d"/><stop offset=".55" stop-color="#ffd76e"/><stop offset="1" stop-color="#fff6d8"/></linearGradient>
+        </defs>
+      </svg>
+      <ul class="h-candles" aria-label="見自己、抱自己、謝自己、愛自己、給自己">
+        <li><svg viewBox="0 0 80 170" aria-hidden="true" focusable="false"><g><circle class="halo" cx="40" cy="36" r="30" fill="url(#h-halo)"/><path class="flame" fill="url(#h-flame)" d="M40 10c3 11 13 16 13 28 0 8-6 13-13 13s-13-5-13-13c0-7 4-11 7-15 1 3 3 5 5 5 2-6 1-12 1-18z"/><path class="wick" d="M40 62c0-3 1-5 0-9"/><rect class="wax" x="14" y="70" width="52" height="96" rx="20"/><path class="drip" d="M12 82c0-14 12-22 28-22s28 8 28 22c0 6-6 7-7 1-1-4-5-4-6 1-1 7-1 15-5 15s-4-8-5-14c-1-4-6-4-7 0-1 5 0 9-4 9s-4-6-5-11c-1-4-5-4-6 0-1 5-11 5-11-1z"/><g class="is-off"><circle class="face" cx="31" cy="112" r="3.2"/><circle class="face" cx="49" cy="112" r="3.2"/><path class="face-line" d="M37 125h6"/></g><g class="is-on"><path class="face-line" d="M26 113q5-6 10 0M44 113q5-6 10 0"/><path class="face" d="M33 121q7 3 14 0q-1 9-7 9t-7-9z"/></g></g></svg><span>見自己</span></li>
+        <li><svg viewBox="0 0 80 170" aria-hidden="true" focusable="false"><g transform="rotate(-2 40 100)"><circle class="halo" cx="40" cy="36" r="30" fill="url(#h-halo)"/><path class="flame" fill="url(#h-flame)" d="M40 10c3 11 13 16 13 28 0 8-6 13-13 13s-13-5-13-13c0-7 4-11 7-15 1 3 3 5 5 5 2-6 1-12 1-18z"/><path class="wick" d="M40 62c0-3 1-5 0-9"/><rect class="wax" x="14" y="70" width="52" height="96" rx="20"/><path class="drip" d="M12 82c0-14 12-22 28-22s28 8 28 22c0 6-6 7-7 1-1-4-5-4-6 1-1 7-1 15-5 15s-4-8-5-14c-1-4-6-4-7 0-1 5 0 9-4 9s-4-6-5-11c-1-4-5-4-6 0-1 5-11 5-11-1z"/><g class="is-off"><circle class="face" cx="31" cy="112" r="3.2"/><circle class="face" cx="49" cy="112" r="3.2"/><path class="face-line" d="M37 125h6"/></g><g class="is-on"><path class="face-line" d="M26 113q5-6 10 0M44 113q5-6 10 0"/><path class="face" d="M33 121q7 3 14 0q-1 9-7 9t-7-9z"/></g></g></svg><span>抱自己</span></li>
+        <li><svg viewBox="0 0 80 170" aria-hidden="true" focusable="false"><g transform="rotate(1.5 40 100)"><circle class="halo" cx="40" cy="36" r="30" fill="url(#h-halo)"/><path class="flame" fill="url(#h-flame)" d="M40 10c3 11 13 16 13 28 0 8-6 13-13 13s-13-5-13-13c0-7 4-11 7-15 1 3 3 5 5 5 2-6 1-12 1-18z"/><path class="wick" d="M40 62c0-3 1-5 0-9"/><rect class="wax" x="14" y="70" width="52" height="96" rx="20"/><path class="drip" d="M12 82c0-14 12-22 28-22s28 8 28 22c0 6-6 7-7 1-1-4-5-4-6 1-1 7-1 15-5 15s-4-8-5-14c-1-4-6-4-7 0-1 5 0 9-4 9s-4-6-5-11c-1-4-5-4-6 0-1 5-11 5-11-1z"/><g class="is-off"><circle class="face" cx="31" cy="112" r="3.2"/><circle class="face" cx="49" cy="112" r="3.2"/><path class="face-line" d="M37 125h6"/></g><g class="is-on"><path class="face-line" d="M26 113q5-6 10 0M44 113q5-6 10 0"/><path class="face" d="M33 121q7 3 14 0q-1 9-7 9t-7-9z"/></g></g></svg><span>謝自己</span></li>
+        <li><svg viewBox="0 0 80 170" aria-hidden="true" focusable="false"><g transform="rotate(-1 40 100)"><circle class="halo" cx="40" cy="36" r="30" fill="url(#h-halo)"/><path class="flame" fill="url(#h-flame)" d="M40 10c3 11 13 16 13 28 0 8-6 13-13 13s-13-5-13-13c0-7 4-11 7-15 1 3 3 5 5 5 2-6 1-12 1-18z"/><path class="wick" d="M40 62c0-3 1-5 0-9"/><rect class="wax" x="14" y="70" width="52" height="96" rx="20"/><path class="drip" d="M12 82c0-14 12-22 28-22s28 8 28 22c0 6-6 7-7 1-1-4-5-4-6 1-1 7-1 15-5 15s-4-8-5-14c-1-4-6-4-7 0-1 5 0 9-4 9s-4-6-5-11c-1-4-5-4-6 0-1 5-11 5-11-1z"/><g class="is-off"><circle class="face" cx="31" cy="112" r="3.2"/><circle class="face" cx="49" cy="112" r="3.2"/><path class="face-line" d="M37 125h6"/></g><g class="is-on"><path class="face-line" d="M26 113q5-6 10 0M44 113q5-6 10 0"/><path class="face" d="M33 121q7 3 14 0q-1 9-7 9t-7-9z"/></g></g></svg><span>愛自己</span></li>
+        <li><svg viewBox="0 0 80 170" aria-hidden="true" focusable="false"><g transform="rotate(2 40 100)"><circle class="halo" cx="40" cy="36" r="30" fill="url(#h-halo)"/><path class="flame" fill="url(#h-flame)" d="M40 10c3 11 13 16 13 28 0 8-6 13-13 13s-13-5-13-13c0-7 4-11 7-15 1 3 3 5 5 5 2-6 1-12 1-18z"/><path class="wick" d="M40 62c0-3 1-5 0-9"/><rect class="wax" x="14" y="70" width="52" height="96" rx="20"/><path class="drip" d="M12 82c0-14 12-22 28-22s28 8 28 22c0 6-6 7-7 1-1-4-5-4-6 1-1 7-1 15-5 15s-4-8-5-14c-1-4-6-4-7 0-1 5 0 9-4 9s-4-6-5-11c-1-4-5-4-6 0-1 5-11 5-11-1z"/><g class="is-off"><circle class="face" cx="31" cy="112" r="3.2"/><circle class="face" cx="49" cy="112" r="3.2"/><path class="face-line" d="M37 125h6"/></g><g class="is-on"><path class="face-line" d="M26 113q5-6 10 0M44 113q5-6 10 0"/><path class="face" d="M33 121q7 3 14 0q-1 9-7 9t-7-9z"/></g></g></svg><span>給自己</span></li>
+      </ul>
     </section>
 
-    <section class="section">
-      <div class="section-header">
-        <h2>這個網站有什麼</h2>
-        <p>
-          這裡有我的故事，也有我的方法、服務與案例，整理在同一個地方 ——
-          我自己看得懂，別人也看得懂。
-        </p>
-      </div>
-      <div class="grid cards">
-        <a class="card card-link card-accent" href="./about/">
-          <h3>我是誰</h3>
-          <p>我的故事、理念、人生原則與世界觀。為什麼我會走到現在這件事情上。</p>
-          <span class="more">往下讀 →</span>
-        </a>
-        <a class="card card-link card-gold" href="./lab/">
-          <h3>輕贏實驗室</h3>
-          <p>我的方法論基地。人生實驗、品牌實驗、AI 實驗與案例實驗四條線。</p>
-          <span class="more">往下讀 →</span>
-        </a>
-        <a class="card card-link card-forest" href="./services/">
-          <h3>我的服務</h3>
-          <p>Co Me Time 聊心療你、人生覺察與天賦梳理、品牌規劃、AI 品牌系統。</p>
-          <span class="more">往下讀 →</span>
-        </a>
-        <a class="card card-link" href="./works/">
-          <h3>我的作品</h3>
-          <p>實際合作案例、Podcast、短影音與文章。信任是從作品長出來的。</p>
-          <span class="more">往下讀 →</span>
+    <!-- 03 Co Me Time：整站的主軸。字取自 /cometime/ 首屏 -->
+    <section class="h-sheet h-ember h-ct" id="cometime">
+      <div class="h-ct-grid">
+        <div>
+          <span class="h-label">CO ME TIME｜聊心療你</span>
+          <h2 class="h-h2"><span class="h-nb">每個人，</span><span class="h-nb">都是會亮的蠟燭。</span><span class="h-ct-rest">只是還沒被點燃。</span></h2>
+          <p class="lead" style="margin-top:18px;">一杯咖啡的時間，和 Alisha 面對面聊 90 分鐘。先把妳點亮，妳也可以去點亮別人。</p>
+          <div class="h-actions">
+            <a class="btn btn-flame" href="./cometime/">看 Co Me Time</a>
+            <a class="btn btn-line" href="./services/">所有服務</a>
+          </div>
+        </div>
+        <a href="./cometime/" aria-label="看 Co Me Time">
+          <figure class="h-ticket">
+            <img src="./assets/img/mascot/cometime.webp" width="1280" height="720" alt="一根亮著的蠟燭用火柴點亮另一根，身邊的小蠟燭圍著看" loading="lazy">
+          </figure>
         </a>
       </div>
     </section>
 
-    <section class="section">
-      <div class="hero-grid">
-        <div class="panel">
-          <span class="eyebrow">核心方法</span>
-          <h2>人生，是用來被看懂的</h2>
-          <p class="lead">
-            很多人只是還沒看懂自己、還沒看懂情緒、還沒看懂為什麼會痛、
-            還沒看懂自己真正想去的地方。當一個人開始看懂自己，人生就會開始轉動。
-          </p>
-          <p class="lead">
-            所以我不追求瞬間改變人生。我相信熱情是一點一點重新點燃的 —— 一次一次對話、一次一次覺察、一次一次修正方向。
-          </p>
+    <!-- 04 三個原則：舊首頁三張卡的字，配上 Co Me Time 的吉祥物 -->
+    <section class="h-sheet h-paper">
+      <div class="h-head">
+        <div>
+          <span class="h-label">三個原則</span>
+          <h2 class="h-h2">輕贏・走出趣・伯樂</h2>
+        </div>
+      </div>
+      <ol class="h-steps">
+        <li>
+          <figure class="h-pill"><img src="./assets/img/mascot/lit.webp" width="560" height="385" alt="剛亮起來的小蠟燭，開心地笑著" loading="lazy"></figure>
+          <h3>輕贏</h3>
+          <p>輕盈的狀態，加上比昨天的自己更進步。跟昨天的自己比，標準由自己定。</p>
+        </li>
+        <li>
+          <figure class="h-pill"><img src="./assets/img/mascot/out.webp" width="860" height="590" alt="小蠟燭帶著自己的發光網頁走上街" loading="lazy"></figure>
+          <h3>走出趣</h3>
+          <p>先幫自己走出去，走出去之後就能幫助別人。</p>
+        </li>
+        <li>
+          <figure class="h-pill"><img src="./assets/img/mascot/match.webp" width="560" height="385" alt="高蠟燭用火柴點亮一根小蠟燭" loading="lazy"></figure>
+          <h3>伯樂</h3>
+          <p>先當自己的伯樂，然後成為別人的伯樂。</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 05 這個網站有什麼 -->
+    <section class="h-plain">
+      <div class="h-head">
+        <h2 class="h-h2">這個網站有什麼</h2>
+        <p>這裡有我的故事，也有我的方法、服務與案例，整理在同一個地方 —— 我自己看得懂，別人也看得懂。</p>
+      </div>
+      <ul class="h-map">
+        <li>
+          <a href="./about/">
+            <figure class="h-ticket"><img src="./assets/img/mascot/about.webp" width="900" height="672" alt="高蠟燭坐在窗邊翻旅行手帳，三根小蠟燭依偎在旁，身邊飄著雪中的圓頂城市、櫻花小徑和一杯咖啡" loading="lazy"></figure>
+            <h3>我是誰</h3>
+            <p>我的故事、理念、人生原則與世界觀。為什麼我會走到現在這件事情上。</p>
+            <span class="more">往下讀 →</span>
+          </a>
+        </li>
+        <li>
+          <a href="./lab/">
+            <figure class="h-ticket"><img src="./assets/img/mascot/lab.webp" width="900" height="672" alt="戴著小護目鏡的小蠟燭在實驗室裡，把金色的光從一個燒瓶倒進另一個" loading="lazy"></figure>
+            <h3>輕贏實驗室</h3>
+            <p>我的方法論基地。人生實驗、品牌實驗、AI 實驗與案例實驗四條線。</p>
+            <span class="more">往下讀 →</span>
+          </a>
+        </li>
+        <li>
+          <a href="./shao/">
+            <figure class="h-ticket"><img src="./assets/img/mascot/shao.webp" width="900" height="672" alt="酒紅色的工作室裡，小蠟燭把蠟倒進一排彩色的玻璃杯蠟燭" loading="lazy"></figure>
+            <h3>媽媽燒</h3>
+            <p>宇宙媽媽賞的身心靈選品。燒蠟燭、燒好物，燒掉你不需要的舊能量。</p>
+            <span class="more">往下讀 →</span>
+          </a>
+        </li>
+        <li>
+          <a href="./works/">
+            <figure class="h-ticket"><img src="./assets/img/mascot/works.webp" width="900" height="672" alt="小蠟燭坐在書桌前，筆電上是一頁網站，旁邊有麥克風和架著的手機" loading="lazy"></figure>
+            <h3>我的作品</h3>
+            <p>實際合作案例、Podcast、短影音與文章。信任是從作品長出來的。</p>
+            <span class="more">往下讀 →</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 06 核心方法 -->
+    <section class="h-sheet h-dusk">
+      <div class="h-method">
+        <div>
+          <span class="h-label">核心方法</span>
+          <h2 class="h-h2" style="margin-bottom:18px;">人生，是用來被看懂的</h2>
+          <p class="lead">很多人只是還沒看懂自己、還沒看懂情緒、還沒看懂為什麼會痛、還沒看懂自己真正想去的地方。當一個人開始看懂自己，人生就會開始轉動。</p>
+          <p class="lead">所以我不追求瞬間改變人生。我相信熱情是一點一點重新點燃的 —— 一次一次對話、一次一次覺察、一次一次修正方向。</p>
           <div class="tagrow">
             <span class="tag">簡單</span>
             <span class="tag">自然</span>
@@ -150,67 +191,58 @@
             <span class="tag">自信・自在・自由</span>
           </div>
         </div>
-
-        <aside class="panel panel-soft">
-          <h3>我特別想陪伴的人</h3>
-          <ul class="prose" style="margin-top:14px;">
+        <aside class="h-who">
+          <div class="h-who-top">
+            <h3>我特別想陪伴的人</h3>
+            <img src="./assets/img/mascot/thinking.webp" width="300" height="375" alt="一根還沒點的小蠟燭，手指抵著下巴在想事情" loading="lazy">
+          </div>
+          <ul>
             <li>長期把家人放第一，卻忘了自己的人</li>
             <li>外表看起來堅強，內心其實很累的人</li>
             <li>很努力卻很空虛、找不到熱情的人</li>
             <li>明明很有能力，卻不相信自己的人</li>
             <li>想重新開始第二人生的人</li>
           </ul>
-          <blockquote class="quote" style="margin-top:20px;">
-            人生下半場，<br>是開始發光的時候。
-          </blockquote>
+          <blockquote class="quote">人生下半場，<br>是開始發光的時候。</blockquote>
         </aside>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-header">
-        <h2>輕贏實驗室怎麼運轉</h2>
-        <p>
-          實驗室是一個會自己長大的循環。
-          每一次真實的陪伴都會變成案例，案例變成內容，內容再帶來下一個人。
-        </p>
+    <!-- 07 輕贏實驗室怎麼運轉 -->
+    <section class="h-plain">
+      <div class="h-head">
+        <h2 class="h-h2">輕贏實驗室怎麼運轉</h2>
+        <p>實驗室是一個會自己長大的循環。每一次真實的陪伴都會變成案例，案例變成內容，內容再帶來下一個人。</p>
       </div>
-      <div class="panel panel-soft">
-        <ul class="flow">
-          <li class="mark">我的人生經驗</li>
-          <li class="arrow">→</li>
-          <li>方法與理念</li>
-          <li class="arrow">→</li>
-          <li class="mark">輕贏實驗室</li>
-          <li class="arrow">→</li>
-          <li>實際幫助一個人</li>
-          <li class="arrow">→</li>
-          <li>形成案例</li>
-          <li class="arrow">→</li>
-          <li>案例變成內容</li>
-          <li class="arrow">→</li>
-          <li>內容建立信任</li>
-          <li class="arrow">→</li>
-          <li>新的合作對象</li>
-          <li class="arrow">→</li>
-          <li class="mark">回到實驗室</li>
-        </ul>
-      </div>
+      <ol class="h-loop">
+        <li class="mark"><span>我的人生經驗</span></li>
+        <li><span>方法與理念</span></li>
+        <li class="mark"><span>輕贏實驗室</span></li>
+        <li><span>實際幫助一個人</span></li>
+        <li><span>形成案例</span></li>
+        <li><span>案例變成內容</span></li>
+        <li><span>內容建立信任</span></li>
+        <li><span>新的合作對象</span></li>
+        <li class="mark"><span>回到實驗室</span></li>
+      </ol>
     </section>
 
-    <section class="section">
-      <div class="panel">
-        <span class="eyebrow">聯絡</span>
-        <h2>想聊聊，可以從這裡開始</h2>
-        <p class="lead">
-          目前每一件合作都是一次真實的對話開始的。如果你正在某個卡住的地方，
-          或想整理自己的品牌，歡迎直接來找我。
-        </p>
-        <div class="actions">
-          <a class="button primary" href="./cometime/">預約 Co Me Time</a>
-          <a class="button" href="https://www.instagram.com/alishasatojp/" rel="me">Instagram</a>
-          <a class="button" href="./services/">先看看服務內容</a>
+    <!-- 08 聯絡 -->
+    <section class="h-sheet h-glow" id="contact">
+      <div class="h-cta">
+        <div>
+          <span class="h-label">聯絡</span>
+          <h2 class="h-h2">想聊聊，可以從這裡開始</h2>
+          <p class="lead" style="margin-top:16px;">目前每一件合作都是一次真實的對話開始的。如果你正在某個卡住的地方，或想整理自己的品牌，歡迎直接來找我。</p>
+          <div class="h-actions">
+            <a class="btn btn-ink" href="./cometime/">預約 Co Me Time</a>
+            <a class="btn btn-outline" href="https://www.instagram.com/alishasatojp/" rel="me">Instagram</a>
+            <a class="btn btn-outline" href="./services/">先看看服務內容</a>
+          </div>
         </div>
+        <figure class="h-ticket">
+          <img src="./assets/img/mascot/all-lit.webp" width="576" height="720" alt="滿室的蠟燭都亮了，一起笑著" loading="lazy">
+        </figure>
       </div>
     </section>
   </main>
@@ -225,7 +257,7 @@
         <p class="footer-note">
           本站由 <a href="https://www.three-quarters.net/">四分之三國際有限公司</a> AI 品牌營運製作與維運。
         </p>
-        <p class="footer-note">內容著作權屬宇宙媽媽賞。</p>
+        <p class="footer-note">內容著作權屬宇宙媽媽賞。吉祥物插圖為 AI 生成。</p>
       </div>
     </div>
   </footer>

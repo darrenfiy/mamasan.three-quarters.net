@@ -15,7 +15,7 @@
 
 | 路徑 | 對應她的架構 |
 |---|---|
-| `/` | 首頁 |
+| `/` | 首頁。`2026-11-13` 起是燭光版：以 `/cometime/` 一頁式為主軸，吉祥物是 Co Me Time 的卡通蠟燭（Darren：mamasan 很喜歡，以後就是她的吉祥物）。字沿用舊首頁，是之後修正的地基 |
 | `/about/` | 01 我是誰 —— 故事、理念、人生原則、世界觀 |
 | `/lab/` | 02 輕贏實驗室 —— 四條實驗線、人格百態 |
 | `/services/` | 03 我的服務 —— Co Me Time、人生覺察、品牌規劃、AI 品牌系統 |
@@ -32,11 +32,11 @@
 
 ## 樣式
 
-單一 `assets/css/styles.css`，無 build、無相依套件、無 JavaScript（`/cometime/onepage/` 的轉址只有一行 `location.replace`）。例外是 `/cometime/`：有自己的 `candle.css` 與 `candle.js`。
+單一 `assets/css/styles.css`，無 build、無相依套件。JavaScript 只有首頁的 `assets/js/home.js`（五根小蠟燭捲到才點亮，沒有 JS 就一直亮著）和 `/cometime/onepage/` 的一行轉址。例外是 `/cometime/`：有自己的 `candle.css` 與 `candle.js`，不用全站樣式。
 
-視覺上刻意與 `three-quarters.net` 同一家族（紙感米色、襯線字、圓角面板），
-但主色從公司的赭紅換成她自己定的**乾燥玫瑰 × 香檳金 × 墨綠** ——
-看得出同一家出品，但是她的聲音。
+**`2026-11-13` 起全站是 Co Me Time 的燭光色**：夜色、燭火、蠟、紙，字型 Noto Serif TC＋Noto Sans TC（`styles.css` 開頭 `@import`）。舊的 `--rose`、`--gold`、`--forest` 變數名留著，值換成燭光家族，所以子頁不用改 class 就跟著換。首頁的元件（色紙區塊、票券框、金線、手繪小蠟燭）在 `styles.css` 的〈首頁：燭光版〉段；其他頁之後要升級，就從這一段拿元件來排。`/shao/` 仍用自己的酒紅。
+
+`2026-09` 到 `2026-11-12` 的舊配色是乾燥玫瑰 × 香檳金 × 墨綠，在 Git 歷史裡。
 
 ## 照片
 
@@ -50,6 +50,8 @@
 | `og-mamasan.jpg` | 各頁分享預覽（LINE／FB） | 1200×630，由首頁標題與第一張人像合成 |
 | `og-cometime.jpg` | 舊 `/cometime/` 的分享預覽，`2026-11-06` 起沒有頁面在用（現行頁用 `cometime/media/og-candle.jpg`）；留著是怕已分享出去的連結還在讀它 | 1200×630，原始檔 `mamasan-lab/3-cometime/landing/og-cometime.html` |
 | `og-onepage.jpg` | 舊聯名款頁的分享預覽，`2026-11-04` 起沒有頁面在用（轉址頁改用官網的 `og-cometime.jpg`）；留著是怕已分享出去的連結還在讀它 | 1200×630，標題與價格 NT$8,888；原始檔 `mamasan-lab/3-cometime/landing/og-onepage.html` |
+
+吉祥物插圖在 `assets/img/mascot/`（首頁用）：`about`、`lab`、`shao`、`works` 四張是 `2026-11-13` 以〈點亮心火的蠟燭聚會〉為參考用 Vertex 出的，製作紀錄在 Drive `想法箱/2026-11-13 方法四步深色金光參考圖/製作紀錄/2026-11-13 首頁吉祥物/`。其餘六張（`cometime`、`lit`、`out`、`match`、`thinking`、`all-lit`）複製自 `/cometime/media/`，兩邊各自獨立，改一邊不會動到另一邊。
 
 三張人像是收到的原檔，沒有重新壓縮（853×1280，每張 30–40 KB，看起來是傳訊軟體壓過的版本）。
 若拿得到攝影師給的高解析原檔，用同檔名覆蓋即可，版面不用改。
