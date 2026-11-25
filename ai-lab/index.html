@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>AI 探索實驗室｜寒假網頁 App 實作</title>
-<meta name="description" content="12–15 歲寒假實體小班。和 AI 一起把想法說清楚、做出第一版、試過再改，帶回自己的翻牌網頁 App。">
-<meta property="og:title" content="AI 探索實驗室｜做出你的第一個網頁 App">
-<meta property="og:description" content="一個下午，從自己喜歡的主題出發，和 AI 做出一個回家也能打開的翻牌網頁。">
+<title>AI 探索實驗室｜寒假對戰卡牌實作</title>
+<meta name="description" content="12–15 歲寒假實體小班。全班用 AI 發明一套對戰卡牌遊戲：想角色、畫卡面，把規則說清楚，看它當場變成能玩的遊戲，帶回自己的牌組。">
+<meta property="og:title" content="AI 探索實驗室｜和 AI 一起發明對戰卡牌">
+<meta property="og:description" content="一個下午，全班發明一套對戰卡牌遊戲，每個人帶回一副自己設計的牌。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://mamasan.three-quarters.net/ai-lab/poster-wheel.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,7 +103,9 @@ h2{font-size:clamp(26px,4vw,38px); line-height:1.3; margin:0 0 18px; font-weight
 .how-head .sub{margin-bottom:0}
 .poster{margin:0}
 .poster img{display:block; width:100%; height:auto; border-radius:22px; border:2px solid var(--ink); box-shadow:10px 10px 0 -2px var(--spark-soft),10px 10px 0 0 var(--ink)}
-.how-head .poster{transform:rotate(1.5deg)}
+.game-card{margin:0; justify-self:center; width:100%; max-width:300px; text-align:center}
+.game-card img{display:block; width:100%; height:auto; border-radius:18px; transform:rotate(3deg); box-shadow:0 2px 0 rgba(29,36,48,.08),0 18px 36px -14px rgba(29,36,48,.45)}
+.game-card figcaption{margin-top:18px; font-size:13px; color:var(--ink-2)}
 .people-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:28px; align-items:start; margin-top:24px}
 .people-cards{display:grid; gap:20px}
 .note{margin-top:20px; font-size:15px; color:var(--ink-2); border-left:4px solid var(--spark); padding:4px 0 4px 14px}
@@ -141,6 +143,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
   .parents{grid-template-columns:1fr; padding:28px}
   .how-head,.people-grid{grid-template-columns:1fr; gap:28px}
   .poster{max-width:440px; width:100%; margin-inline:auto}
+  .game-card{max-width:260px}
 }
 @media (max-width:620px){
   body{font-size:16px}
@@ -151,7 +154,6 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
   .demo{box-shadow:6px 6px 0 -2px var(--leaf-soft),6px 6px 0 0 var(--ink)}
   .sticker{right:6px}
   .poster img{box-shadow:6px 6px 0 -2px var(--spark-soft),6px 6px 0 0 var(--ink)}
-  .how-head .poster{transform:none}
 }
 @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:hover{transform:none}}
 </style>
@@ -177,7 +179,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
         <span class="tag">寒假小班試辦</span><span class="tag">12–15 歲</span><span class="tag">無程式基礎可</span>
       </div>
       <h1>把想法說清楚，<br>和 AI 一起<span class="hl"><span class="spark">做出來</span></span></h1>
-      <p class="lead">一個下午，做出你的第一個網頁 App。選一個喜歡的主題，和 AI 做出翻牌小作品，試過、改過，再帶回家給家人玩。</p>
+      <p class="lead">一個下午，全班一起發明一套對戰卡牌遊戲。用 AI 想角色、畫卡面，再把規則說給 AI Agent 聽，看它當場變成能玩的遊戲。最後帶著自己設計的牌組跟同學對戰，回家也能找家人玩。</p>
       <p class="teacher-line"><a href="#people">講師 大倫 Darren</a>・曾任國小老師</p>
       <div class="cta">
         <a class="btn btn-main" href="https://line.me/R/ti/p/@941hfdmj" target="_blank" rel="noopener" aria-describedby="line-contact">用 LINE 詢問課程</a>
@@ -189,12 +191,12 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
     <figure class="demo" aria-label="示意：孩子和 AI 一起把想法做成作品">
       <span class="sticker">示意</span>
       <div class="demo-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-      <p class="msg kid"><small>孩子</small>我想做一個籃球小測驗。</p>
-      <p class="msg ai"><small>AI 做的第一版</small>題目和答案一起出現在畫面上。</p>
-      <p class="msg kid"><small>孩子試過後</small>我希望玩家先猜，點一下才看得到答案。先改一題，我試試看。</p>
+      <p class="msg kid"><small>孩子對 AI Agent 說</small>我的火龍會噴火，對手的盾擋不住。</p>
+      <p class="msg ai"><small>AI Agent 做的第一版</small>試玩三局，火龍每一回合都贏。</p>
+      <p class="msg kid"><small>孩子試玩後</small>太強了，大家都不想玩。戰力從 9 改成 7，噴火一場只能用一次。</p>
       <div class="made">
         <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="6" width="34" height="26" rx="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M3 13h34" stroke="currentColor" stroke-width="2.4"/><circle cx="15" cy="23" r="4" fill="#ef6a3a"/><path d="M22 20h9M22 26h6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
-        <div><b>籃球翻牌小測驗</b><span>自訂題目，點一下翻答案</span></div>
+        <div><b>火龍・戰力 7・火屬性</b><span>特技：噴火（一場一次）</span></div>
       </div>
     </figure>
   </div>
@@ -206,17 +208,18 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
       <div>
         <p class="kicker">怎麼上</p>
         <h2>讓你的大腦多一輪，思考多一層</h2>
-        <p class="sub">同一個翻牌網頁底板，題目由孩子自己選。可以做英文單字、籃球規則，也可以替自己發明的角色設計一副牌。</p>
+        <p class="sub">全班一起定世界觀和規則，每個人設計自己的牌。用 ChatGPT、Gemini 發想角色、畫卡面，用 Suno 替遊戲寫一首主題曲；老師操作 AI Agent，把大家說的話做成真的能玩的遊戲。</p>
       </div>
-      <figure class="poster">
-        <img src="poster-wheel.jpg" width="900" height="900" loading="lazy" alt="海報：大倫頭上套著一個發光的輪胎，抬頭笑著想事情，旁邊有個比讚的小機器人。標語寫著「大倫，讓你的大腦多一輪，思考多一層！」「大倫 × AI 認知外掛，讓想法無限升級！」">
+      <figure class="game-card">
+        <img src="card-fire-dragon.jpg" width="600" height="900" loading="lazy" alt="示意卡牌：火龍，火屬性，戰力 7，特技噴火，一場一次。卡面是一隻紅色的龍在山間噴火。">
+        <figcaption>示意：首屏那隻改過的火龍</figcaption>
       </figure>
     </div>
     <ol class="steps">
-      <li><h3>說清楚想做什麼</h3><p>選主題、寫三題，說說你希望誰來玩。</p></li>
-      <li><h3>和 AI 做第一版</h3><p>跟著老師用會寫程式的 AI 助手（AI Agent），把題目放進能操作的網頁。</p></li>
-      <li><h3>自己玩一輪再改</h3><p>和同學交換試玩，找出一個問題，說清楚怎麼改，再點一次確認。</p></li>
-      <li><h3>把作品帶回家</h3><p>存成可離線打開的網頁，展示一個由你決定的改動。</p></li>
+      <li><h3>一起發明世界</h3><p>聊聊喜歡什麼，用聊天 AI 一起想角色、屬性和卡面。</p></li>
+      <li><h3>說給 AI Agent 聽</h3><p>輪流對老師的 AI Agent 說規則，看它當場做成遊戲。說不清楚，它就做錯，再說一次。</p></li>
+      <li><h3>對戰、找問題、再改</h3><p>和同學對戰。哪張太強、哪條規則不好玩，說清楚要怎麼改。</p></li>
+      <li><h3>帶自己的牌組回家</h3><p>存成離線也能打開的遊戲，附一串可以傳給同學的牌組代碼。</p></li>
     </ol>
     <p class="note">規劃一個下午、4–5 人的實體小班。日期、地點與費用確認後另行通知。想試上或需要借筆電的家庭，可以先用 LINE 詢問。</p>
   </div>
@@ -225,12 +228,12 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
 <section class="take">
   <div class="wrap">
     <p class="kicker">帶走什麼</p>
-    <h2>回家也能打開的作品</h2>
-    <p class="sub">從自己喜歡的題目開始，做成一個家人也能玩的網頁。這是我們想留給孩子的一次「原來我也做得到」。</p>
+    <h2>回家也能玩的遊戲</h2>
+    <p class="sub">從自己喜歡的東西出發，設計出別人也想玩的牌。這是我們想留給孩子的一次「原來我也做得到」。</p>
     <div class="grid-3">
-      <div class="card"><span class="ico" style="background:var(--sky-soft)"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="4" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M9 18l4-5 3 3 3-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>一件作品</h3><p>一個離線也能玩的翻牌網頁。</p></div>
-      <div class="card"><span class="ico" style="background:var(--leaf-soft)"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M7 21l5-5M16 6l6 6-8 8-6-6z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>自己改過的原始檔</h3><p>整個作品就是一個檔案，不用帳號、不綁平台。想加題目或改玩法，回家還能接著做。</p></div>
-      <div class="card"><span class="ico" style="background:var(--spark-soft)"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 4l2.9 6 6.6.9-4.8 4.6 1.2 6.5L14 18.9 8.1 22l1.2-6.5L4.5 10.9l6.6-.9z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></span><h3>一張下一步小卡</h3><p>記下自己改了什麼，下次還想試什麼。</p></div>
+      <div class="card"><span class="ico" style="background:var(--sky-soft)"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><rect x="4" y="4" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M9 18l4-5 3 3 3-4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>一副自己的牌</h3><p>自己發明的角色、數值和特技，放進全班一起做的遊戲。</p></div>
+      <div class="card"><span class="ico" style="background:var(--leaf-soft)"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M7 21l5-5M16 6l6 6-8 8-6-6z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>自己改過的原始檔</h3><p>整個遊戲就是一個檔案，不用帳號、不綁平台。想加牌或改規則，回家還能接著做。</p></div>
+      <div class="card"><span class="ico" style="background:var(--spark-soft)"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 4l2.9 6 6.6.9-4.8 4.6 1.2 6.5L14 18.9 8.1 22l1.2-6.5L4.5 10.9l6.6-.9z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg></span><h3>說得出的差別</h3><p>聊天 AI 和 AI Agent 各能做什麼、差在哪，自己用過就說得清楚。</p></div>
     </div>
   </div>
 </section>
@@ -241,9 +244,9 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
       <div>
         <p class="kicker">給爸媽</p>
         <h2>看孩子自己展示</h2>
-        <p style="margin:0;color:var(--ink-2)">課程最後預留時間，讓孩子操作給家人看，也說說 AI 幫了哪裡、自己決定了什麼。</p>
+        <p style="margin:0;color:var(--ink-2)">課程最後預留時間，讓孩子帶家人玩一局，也說說 AI 幫了哪裡、自己決定了什麼。</p>
       </div>
-      <p class="q">回家可以問孩子：「你試完第一版，最想改哪裡？」</p>
+      <p class="q">回家可以問孩子：「你那張牌，為什麼這樣設計？」</p>
     </div>
   </div>
 </section>
@@ -254,10 +257,10 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
     <h2>孩子交給我們，這幾件事先說清楚</h2>
     <ul class="promise" style="margin-top:24px">
       <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="#1f8a7a" stroke-width="2.2"/><path d="M7 11.5l2.7 2.6L15 8.6" fill="none" stroke="#1f8a7a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>家長同意在先</b><span>參加、用哪些 AI 服務、作品和照片怎麼用，都先問過家長；孩子也可以隨時說不。</span></div></li>
-      <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="#1f8a7a" stroke-width="2.2"/><path d="M7 11.5l2.7 2.6L15 8.6" fill="none" stroke="#1f8a7a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>不拿大人帳號繞過年齡限制</b><span>每個 AI 服務的年齡條件先查清楚再用。</span></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="#1f8a7a" stroke-width="2.2"/><path d="M7 11.5l2.7 2.6L15 8.6" fill="none" stroke="#1f8a7a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>不拿大人帳號繞過年齡限制</b><span>孩子只用年齡條件允許的 AI 服務，並照各家規定取得家長同意；AI Agent 由老師操作。</span></div></li>
       <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="#1f8a7a" stroke-width="2.2"/><path d="M7 11.5l2.7 2.6L15 8.6" fill="none" stroke="#1f8a7a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>少給資料</b><span>不要求孩子把真名、學校、照片或家裡的事輸入 AI。</span></div></li>
       <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="#1f8a7a" stroke-width="2.2"/><path d="M7 11.5l2.7 2.6L15 8.6" fill="none" stroke="#1f8a7a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>預設不拍臉、不公開作品</b><span>作品是孩子的；要分享出去，另外問家長和孩子。</span></div></li>
-      <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="#1f8a7a" stroke-width="2.2"/><path d="M7 11.5l2.7 2.6L15 8.6" fill="none" stroke="#1f8a7a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>學會負責任地用</b><span>查證、著作權、個資保護，以及怎麼認出 AI 說錯了。</span></div></li>
+      <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="#1f8a7a" stroke-width="2.2"/><path d="M7 11.5l2.7 2.6L15 8.6" fill="none" stroke="#1f8a7a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>學會負責任地用</b><span>查證、著作權（角色自己發明，不用現成卡通人物）、個資保護，以及怎麼認出 AI 說錯了。</span></div></li>
       <li><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="9" fill="none" stroke="#1f8a7a" stroke-width="2.2"/><path d="M7 11.5l2.7 2.6L15 8.6" fill="none" stroke="#1f8a7a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><div><b>不打分數、不貼標籤</b><span>這是一堂動手做作品的課，不是補習，也不承諾提高成績。</span></div></li>
     </ul>
   </div>
@@ -268,7 +271,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
     <h2>講師與課程聯絡</h2>
     <div class="people-grid">
       <figure class="poster">
-        <img src="poster-orbit.jpg" width="900" height="822" loading="lazy" alt="海報：大倫在星空和地球前抬頭微笑、手指著太陽穴，頭頂上有發光的大腦、燈泡、小機器人和筆電繞著轉。標語寫著「大倫，讓你的大腦多一輪，思考多一層！」「AI × 認知外掛，開啟無限可能」">
+        <img src="poster-wheel.jpg" width="900" height="900" loading="lazy" alt="海報：大倫頭上套著一個發光的輪胎，抬頭笑著想事情，旁邊有個比讚的小機器人。標語寫著「大倫，讓你的大腦多一輪，思考多一層！」「大倫 × AI 認知外掛，讓想法無限升級！」">
       </figure>
       <div class="people-cards">
       <div class="card">
@@ -276,7 +279,7 @@ footer .wrap{display:flex; flex-wrap:wrap; justify-content:space-between; gap:12
         <div>
           <p class="role">講師｜溝通與 AI 實作</p>
           <h3>大倫 Darren</h3>
-          <p>曾任國小老師，把從薩提爾與正念學到的溝通方法用在日常 AI 共創，並做出讓人練習說好下一句的《言途》。這堂課，他會帶孩子說清楚需求，試用 AI 做的第一版，再自己決定怎麼改。</p>
+          <p>曾任國小老師，把從薩提爾與正念學到的溝通方法用在日常 AI 共創，並做出讓人練習說好下一句的《言途》。這堂課由他操作 AI Agent，孩子負責把想法說清楚；做出來的每一版要怎麼改，由孩子決定。</p>
           <a class="who" href="https://three-quarters.net/products/dialogue-trainer/">看看大倫做的《言途》</a>
         </div>
       </div>

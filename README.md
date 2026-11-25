@@ -25,7 +25,7 @@
 | `/cometime/onepage/` | **`2026-11-04` 起只是轉址**：Co Me Time × 四分之三 聯名款頁搬到四分之三官網 `https://www.three-quarters.net/services/cometime/`（Darren：聯名服務要能出現在官網、維持官網風格；圖片改成服務本身）。這裡只留 meta refresh＋canonical，舊連結照樣能開。11-03 到 11-04 的模板 v1（`template.css`、`img/`）在 Git 歷史裡，`/cometime/` 的聯名款橫幅改連到新網址；改價清單見 `darrenfiy-studio/OFFERINGS/mamasan-partner-menu/cometime-joint-packages.md` |
 | `/shao/` | 宇宙媽媽燒的門面（`2026-09-27` 新增，`2026-09-30` 改版；選單在「服務」之後）。見下方〈媽媽燒門面〉 |
 | `/shao/candles/` | 希望之光 21 顆頻率蠟燭限定組。**建置產物，不要在這裡改**，見下方〈媽媽燒蠟燭頁〉 |
-| `/ai-lab/` | **候選頁（`2026-11-18`，noindex，選單與首頁都沒連）**：青少年 AI × 開源課「AI 探索實驗室」一頁式（mamasan 要的，Darren 交辦）。課還是 seed：課名、承接方、日期、費用都沒定，頁上只放 LINE 先聊聊。單檔、樣式內嵌、不用全站樣式也不用燭光色（她的 GPT 建議這條線先不塞進宇宙媽媽賞品牌），整個資料夾可搬走。字的來源與還沒定的事見 Academy `PROGRAMS/youth-ai-creation-lab/README.md`；她看過、說可以之前不分享出去。`2026-11-25` 第二版（Codex 改成一個下午做翻牌網頁；Claude 加她傳來的兩張「多一輪」海報 `poster-wheel.jpg`／`poster-orbit.jpg`，900px 壓縮版，原檔與 hash 在 mamasan-lab 想法箱）在本機工作樹，未推 |
+| `/ai-lab/` | **候選頁（`2026-11-18`，noindex，選單與首頁都沒連）**：青少年 AI × 開源課「AI 探索實驗室」一頁式（mamasan 要的，Darren 交辦）。課還是 seed：課名、承接方、日期、費用都沒定，頁上只放 LINE 先聊聊。單檔、樣式內嵌、不用全站樣式也不用燭光色（她的 GPT 建議這條線先不塞進宇宙媽媽賞品牌），整個資料夾可搬走。字的來源與還沒定的事見 Academy `PROGRAMS/youth-ai-creation-lab/README.md`；她看過、說可以之前不分享出去。`2026-11-25` 第二版（Codex 改成一個下午做翻牌網頁；Claude 加她傳來的「多一輪」海報 `poster-wheel.jpg`，900px 壓縮版，原檔與 hash 在 mamasan-lab 想法箱）已推。同日第三版改走全班對戰卡牌：示意改成火龍，〈怎麼上〉放 Darren 給的火龍示意卡 `card-fire-dragon.jpg`（600×900，由 `Fire Dragon Trading Card.png` 壓縮，原檔 SHA-256 `4796bd9d…2351`，原檔不進 Git），講師區只留輪胎頭海報 |
 
 **06 後台不在這個站，也不在任何 repo。** 那一區是第三方個資加上對真人的主觀評分，
 靜態站沒有登入、Git 歷史不可刪除。後台走 Notion 或同類工具，由她自己保管。
